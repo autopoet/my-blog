@@ -21,6 +21,9 @@ export default defineValaxyConfig<UserThemeConfig>({
     banner: {
       enable: true,
       title: '前端学习笔记',
+      cloud: {
+        enable: false,
+      },
     },
 
     pages: [],
