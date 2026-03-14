@@ -78,4 +78,4 @@ pnpm run dev
 ---
 
 **License**: [MIT](LICENSE)  
-**Author**: [Autopoet](https://github.com/autopoet)
+**Author**: [autopoet](https://github.com/autopoet)
