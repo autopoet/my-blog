@@ -20,13 +20,13 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: '前端面试 & 算法笔记',
+      title: '前端学习笔记',
     },
 
     pages: [
       {
-        name: '面试八股',
-        url: '/categories/面试八股/',
+        name: '前端八股',
+        url: '/categories/前端八股/',
         icon: 'i-ri-book-open-line',
         color: 'dodgerblue',
       },

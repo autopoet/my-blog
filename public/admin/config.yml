@@ -17,6 +17,6 @@ collections:
     fields:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "日期", name: "date", widget: "datetime" }
-      - { label: "分类", name: "categories", widget: "list", default: ["面试八股"] }
+      - { label: "分类", name: "categories", widget: "list", default: ["前端八股"] }
       - { label: "标签", name: "tags", widget: "list" }
       - { label: "内容", name: "body", widget: "markdown" }

@@ -2,7 +2,7 @@
 title: JS 基础：彻底搞懂原型与原型链
 date: 2026-03-14
 categories:
-  - 面试八股
+  - 前端八股
 tags:
   - JavaScript
   - 面试
