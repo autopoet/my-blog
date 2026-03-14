@@ -23,26 +23,7 @@ export default defineValaxyConfig<UserThemeConfig>({
       title: '前端学习笔记',
     },
 
-    pages: [
-      {
-        name: '前端八股',
-        url: '/categories/前端八股/',
-        icon: 'i-ri-book-open-line',
-        color: 'dodgerblue',
-      },
-      {
-        name: '代码输出',
-        url: '/categories/代码输出/',
-        icon: 'i-ri-code-s-slash-line',
-        color: 'hotpink',
-      },
-      {
-        name: '算法题',
-        url: '/categories/算法/',
-        icon: 'i-ri-cpu-line',
-        color: 'orange',
-      },
-    ],
+    pages: [],
 
     footer: {
       since: 2026,
