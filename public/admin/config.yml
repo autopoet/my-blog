@@ -2,7 +2,7 @@ backend:
   name: github
   repo: autopoet/my-blog
   branch: master # 如果你的 GitHub 分支是 main，请改为 main
-  base_url: https://my-blog-puce-one.vercel.app/ # 指向你的网站根目录
+  base_url: https://my-blog-puce-one.vercel.app # 指向你的网站根目录
   auth_endpoint: api/auth
 
 media_folder: "public/images"
