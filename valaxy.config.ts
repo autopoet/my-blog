@@ -19,7 +19,7 @@ export default defineValaxyConfig<UserThemeConfig>({
 
   themeConfig: {
     banner: {
-      enable: true,
+      enable: false,
       title: '前端学习笔记',
     },
 
