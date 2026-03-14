@@ -96,13 +96,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/hello-valaxy': RouteRecordInfo<
-      '/posts/hello-valaxy',
-      '/posts/hello-valaxy',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/posts/interview-qa': RouteRecordInfo<
       '/posts/interview-qa',
       '/posts/interview-qa',
@@ -194,12 +187,6 @@ declare module 'vue-router/auto-routes' {
     'node_modules/.pnpm/valaxy-theme-yun@0.28.0-beta.1_vue@3.5.22_typescript@5.9.3_/node_modules/valaxy-theme-yun/pages/posts/index.vue': {
       routes:
         | '/posts/'
-      views:
-        | never
-    }
-    'pages/posts/hello-valaxy.md': {
-      routes:
-        | '/posts/hello-valaxy'
       views:
         | never
     }
