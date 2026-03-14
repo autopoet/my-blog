@@ -1,81 +1,59 @@
-# 前端学习笔记 | Technical Blog
+# 前端学习笔记 | technical-blog
 
-一个基于 Vue 3 和 Valaxy 构建的高性能个人技术博客，专注于记录前端面试八股、代码输出题及算法心得。
-
-[![Powered by Valaxy](https://img.shields.io/badge/Powered%20by-Valaxy-6200ee?style=flat-square&logo=visualstudiocode)](https://valaxy.site)
 [![Framework](https://img.shields.io/badge/Framework-Vue%203-42b883?style=flat-square&logo=vuedotjs)](https://vuejs.org/)
-[![Deployment](https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/)
+[![Powered by Valaxy](https://img.shields.io/badge/Powered%20by-Valaxy-6200ee?style=flat-square&logo=visualstudiocode)](https://valaxy.site)
 [![CMS](https://img.shields.io/badge/CMS-Decap%20CMS-ff7e00?style=flat-square&logo=netlifycms)](https://decapcms.org/)
+[![Deployment](https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/)
 
-这是一个专为**前端实习面试准备**打造的技术博客系统。基于 Vue 3 和 Valaxy 构建，集成了 Headless CMS 可视化管理，旨在实现高效的笔记记录与知识体系构建。
+一个极简、高性能的个人技术博客，基于 **Vue 3** 与 **Valaxy** 构建，专注于前端面试知识体系（八股文）、算法及代码实现。
 
-## 站点信息
+## 🌐 站点信息
 
-- **预览地址**: [https://my-blog-puce-one.vercel.app](https://my-blog-puce-one.vercel.app)
-- **管理后台**: [/admin/](https://my-blog-puce-one.vercel.app/admin/)
+- **网站首页**: [https://my-blog-puce-one.vercel.app](https://my-blog-puce-one.vercel.app)
+- **管理后台**: [/admin/](https://my-blog-puce-one.vercel.app/admin/) (在线可视化编写)
 
 ---
 
-## 核心特性
+## ⚡ 项目特性
 
-- **高效轻量**: 采用 Vite 驱动的 SSG (静态站点生成) 技术，首屏几乎瞬时加载。
-- **专为面试设计**: 深度定制的分类导航，涵盖前端八股、代码实现与算法挑战。
-- **现代化审美**: 使用 `valaxy-theme-yun` 主题，配合 UnoCSS 原子化 CSS，极致轻量且美观。
-- **可视化内容管理**: 集成 **Decap CMS**，支持在 Web 端直接通过富文本编辑器编写/发布 Markdown 博文。
-- **自动化 CI/CD**: 集成 GitHub Actions 与 Vercel，代码提交即部署。
+- **极致性能**: 采用 Vite 驱动的 SSG (静态站点生成) 方案。
+- **结构化知识**: 内置“前端八股”、“代码输出”、“算法挑战”三级分类体系。
+- **现代化样式**: 基于 UnoCSS 实践原子化 CSS，使用 `valaxy-theme-yun` 打造轻盈视觉体验。
+- **可视化管理**: 深度集成 **Decap CMS**，实现 Web 端直接发布、上传图片及管理内容。
+- **全自动流**: 集成 CI/CD，代码变更即自动触发生产环境部署。
 
-## 技术栈
+## 🛠 技术深度 (Technical Highlights)
 
-- **核心框架**: [Vue 3](https://vuejs.org/) + [TypeScript](https://www.typescriptlang.org/)
-- **SSG 引擎**: [Valaxy](https://valaxy.site/)
-- **样式方案**: UnoCSS (Atomic CSS)
-- **内容管理**: Decap CMS + GitHub OAuth
-- **后端脚本**: Vercel Serverless Functions (Node.js)
-- **部署平台**: Vercel
+本项目不仅仅是简单的博客模板，在二次开发中实现了以下工程化实践：
 
-## 项目结构
+- **Auth Bridge**: 基于 Vercel Serverless Functions 开发了 OAuth 认证中转服务，解决了静态站点在 GitHub 授权中的跨域与重定向问题。
+- **CMS 建模**: 通过 YAML 配置对 Decap CMS 进行内容建模，使其完美契合前端面试题库的数据结构。
+- **SEO 优化**: 针对 Vue SPA 架构进行了 SSG 静态化处理，大幅提升了页面加载速度与搜索引擎抓取效率。
+
+## 📁 项目结构
 
 ```bash
-├── api/                # 后端逻辑：处理 CMS 与 GitHub 的 OAuth 授权
+├── api/                # 后端逻辑：Serverless Functions 处理 GitHub OAuth
 ├── pages/
 │   ├── posts/          # 博文源码 (Markdown)
 │   └── index.md        # 站点首页
 ├── public/
-│   ├── admin/          # Decap CMS 管理后台入口及配置
-│   └── images/         # 存放文章配图
-├── site.config.ts      # 站点基础信息配置
-├── valaxy.config.ts    # 主题与插件扩展配置
-└── package.json        # 依赖与脚本
+│   ├── admin/          # Decap CMS 静态入口与配置文件
+│   └── me.jpg          # 作者头像
+├── site.config.ts      # 站点基础元数据配置
+├── valaxy.config.ts    # 主题插件与 UnoCSS 配置
+└── vercel.json         # Vercel 路由重写规则 (核心：修复 admin 路径错位)
 ```
 
-## 快速开始
-
-### 本地开发
+## 🚀 快速上手
 
 ```bash
-# 安装依赖
+# 安装并运行
 pnpm install
-
-# 启动本地开发服务
 pnpm run dev
 ```
 
-### 线上部署
-
-1. 推送到 GitHub 仓库。
-2. 在 Vercel 中添加环境变量：
-   - `OAUTH_CLIENT_ID`: GitHub OAuth Client ID
-   - `OAUTH_CLIENT_SECRET`: GitHub OAuth Client Secret
-
-## 内容管理流程
-
-### 在线管理 (推荐)
-访问 `/admin/` 路径，登录后即可通过可视化界面创建、修改文章，Push 后自动部署。
-
-### 本地创作
-在 `pages/posts/` 下新建 `.md` 文件，完成后执行 Git 提交即可。
-
 ---
 
-**License**: [MIT](LICENSE)  
-**Author**: [autopoet](https://github.com/autopoet)
+**Author**: [autopoet](https://github.com/autopoet)  
+**License**: MIT
