@@ -4,6 +4,7 @@ export default defineSiteConfig({
   url: 'https://valaxy.site/',
   lang: 'zh-CN',
   title: '前端学习笔记',
+  favicon: '/logo.png',
   author: {
     name: 'autopoet',
     avatar: '/me.jpg',
