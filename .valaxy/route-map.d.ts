@@ -103,6 +103,20 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/interview-qa': RouteRecordInfo<
+      '/posts/interview-qa',
+      '/posts/interview-qa',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/template': RouteRecordInfo<
+      '/posts/template',
+      '/posts/template',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/tags/': RouteRecordInfo<
       '/tags/',
       '/tags',
@@ -186,6 +200,18 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/hello-valaxy.md': {
       routes:
         | '/posts/hello-valaxy'
+      views:
+        | never
+    }
+    'pages/posts/interview-qa.md': {
+      routes:
+        | '/posts/interview-qa'
+      views:
+        | never
+    }
+    'pages/posts/template.md': {
+      routes:
+        | '/posts/template'
       views:
         | never
     }

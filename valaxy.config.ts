@@ -4,6 +4,9 @@ import { defineValaxyConfig } from 'valaxy'
 // add icons what you will need
 const safelist = [
   'i-ri-home-line',
+  'i-ri-book-open-line',
+  'i-ri-code-s-slash-line',
+  'i-ri-cpu-line',
 ]
 
 /**
@@ -17,31 +20,32 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: '云游君的小站',
+      title: '前端面试 & 算法笔记',
     },
 
     pages: [
       {
-        name: '我的小伙伴们',
-        url: '/links/',
-        icon: 'i-ri-genderless-line',
+        name: '面试八股',
+        url: '/categories/面试八股/',
+        icon: 'i-ri-book-open-line',
         color: 'dodgerblue',
       },
       {
-        name: '喜欢的女孩子',
-        url: '/girls/',
-        icon: 'i-ri-women-line',
+        name: '代码输出',
+        url: '/categories/代码输出/',
+        icon: 'i-ri-code-s-slash-line',
         color: 'hotpink',
+      },
+      {
+        name: '算法题',
+        url: '/categories/算法/',
+        icon: 'i-ri-cpu-line',
+        color: 'orange',
       },
     ],
 
     footer: {
-      since: 2016,
-      beian: {
-        enable: true,
-        icp: '苏ICP备17038157号',
-        police: '苏公网安备xxxxxx号',
-      },
+      since: 2026,
     },
   },
 
