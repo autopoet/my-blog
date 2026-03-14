@@ -54,7 +54,7 @@
 - 核心功能: 沉浸式阅读、分类索引、全站搜索、移动端适配。
 
 ### 后台创作
-- 进入方式: 访问 `/admin/` 路径。
+- 进入方式: 访问 [/admin/](https://my-blog-puce-one.vercel.app/admin/) 路径。
 - 管理流程: 
   1. 通过 GitHub OAuth 授权登录后台管理面板。
   2. 进入“博文管理”集合，即可通过可视化编辑器进行富文本创作。
@@ -89,7 +89,7 @@
 
 ## 创作流
 
-1. 在线模式: 访问 /admin/ 路径，通过可视化编辑器编写，Push 后自动触发 Vercel 构建。
+1. 在线模式: 访问 [/admin/](https://my-blog-puce-one.vercel.app/admin/) 路径，通过可视化编辑器编写，Push 后自动触发 Vercel 构建。
 2. 本地模式: 在 pages/posts 中通过 Markdown 创作，利用 Git 命令进行版本控制。
 
 ## 开发启动
