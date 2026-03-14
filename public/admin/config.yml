@@ -3,7 +3,7 @@ backend:
   repo: autopoet/my-blog
   branch: main # 与你的 GitHub 分支一致
   base_url: https://my-blog-puce-one.vercel.app # 指向你的网站根目录
-  auth_endpoint: api/auth
+  auth_endpoint: /api/auth
 
 media_folder: "public/images"
 public_folder: "/images"
