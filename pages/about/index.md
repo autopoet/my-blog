@@ -23,7 +23,7 @@ title: 关于作者
 ### 找到我
 
 - **GitHub**: [autopoet](https://github.com/autopoet)
-- **E-Mail**: [authpoet@example.com](mailto:authpoet@example.com)
+- **E-Mail**: [ash132510@gmail.com](mailto:ash132510@gmail.com)
 
 ---
 
