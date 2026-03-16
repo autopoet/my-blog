@@ -2,7 +2,7 @@
   <img src="./public/logo.png" width="128" height="128" alt="autopoet blog logo" />
 </p>
 
-<h1 align="center">前端学习笔记 | Technical Blog</h1>
+<h1 align="center">“墨思”——高性能全栈技术博客与结构化面试知识库</h1>
 
 <p align="center">
   <strong>基于 Vue 3 & SSG 架构的高性能技术博客与可视化后台管理系统</strong>
