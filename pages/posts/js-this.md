@@ -1,6 +1,6 @@
 ---
 title: JS 基础：this 指向详解
-date: 2025-10-10
+date: 2025-10-4
 categories:
   - 前端八股
 tags:

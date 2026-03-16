@@ -1,12 +1,11 @@
 ---
 title: JS 进阶：Promise 异步编程
-date: 2025-10-11
+date: 2025-10-05
 categories:
   - 前端八股
 tags:
   - JavaScript
-  - Promise
-  - 异步
+  - 进阶
 ---
 
 > Promise 是异步编程的一种解决方案，比回调函数更合理且更强大。
