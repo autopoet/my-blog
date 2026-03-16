@@ -34,14 +34,14 @@ tags:
 - **任务列表**：使用 `- [ ]` (未完成) 或 `- [x]` (已完成)。
 
 ### 4. 代码块
-- **行内代码**：用反引号包裹 `` `console.log()` ``。
+- **行内代码**：用反引号包裹 `console.log()`。
 - **代码块**：使用三个反引号包裹，并可以指定语言。
 
-  \```javascript
-  function hello() {
-    console.log("Hello, MoSi!");
-  }
-  \```
+```javascript
+function hello() {
+  console.log("Hello, MoSi!");
+}
+```
 
 ### 5. 链接与图片
 - **链接**：`[显示的文字](URL地址)`
