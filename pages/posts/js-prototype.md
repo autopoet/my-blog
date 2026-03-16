@@ -1,11 +1,13 @@
 ---
-title: JS 基础：彻底搞懂原型与原型链
-date: 2025-10-4
+title: JS 基础：原型与原型链
+date: 2025-10-04
 categories:
   - 前端八股
 tags:
   - JavaScript
   - 基础
+  - 原型
+
 ---
 
 ### 1. 什么是原型 (Prototype)？
@@ -31,6 +33,10 @@ tags:
 -  `prototype`：函数特有的属性，指向它的原型对象，里面存放着所有实例共享的方法。
 
 -  `__proto__`：对象特有的属性，指向创建它的构造函数的 `prototype`。
+
+- 实例.__proto__ === 构造函数.prototype
+
+- 原型对象.constructor === 构造函数本身
 
 ```javascript
 function Person(name) {
