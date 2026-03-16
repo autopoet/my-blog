@@ -1,6 +1,6 @@
 ---
 title: JS 基础：彻底搞懂原型与原型链
-date: 2026-03-14
+date: 2025-10-10
 categories:
   - 前端八股
 tags:
