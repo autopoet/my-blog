@@ -1,6 +1,6 @@
 ---
 title: 浏览器进阶：彻底理解 DOM 事件体系
-date: 2026-10-06
+date: 2025-10-06
 categories:
   - 前端八股
 tags:
