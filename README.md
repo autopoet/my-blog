@@ -1,117 +1,94 @@
 <p align="center">
-  <img src="./public/logo.png" width="128" height="128" alt="autopoet blog logo" />
+  <img src="./public/logo.png" width="120" height="120" alt="autopoet blog logo" />
 </p>
 
-<h1 align="center">“墨思”——高性能全栈技术博客与结构化面试知识库</h1>
+<h1 align="center">墨思 (MoSi) - 我的前端学习与成长记录</h1>
 
 <p align="center">
-  <strong>基于 Vue 3 & SSG 架构的高性能技术博客与可视化后台管理系统</strong>
+  <strong>一个基于 Vue 3 & Valaxy 构建的个人技术博客，记录从零到一的进阶之路</strong>
 </p>
 
 <p align="center">
   <a href="https://vuejs.org/">
-    <img src="https://img.shields.io/badge/Vue-3.x-42b883?style=for-the-badge&logo=vue.js" alt="Vue 3" />
+    <img src="https://img.shields.io/badge/Vue-3.x-42b883?style=flat-square&logo=vue.js" alt="Vue 3" />
   </a>
   <a href="https://valaxy.site/">
-    <img src="https://img.shields.io/badge/Valaxy-SSG-6200ee?style=for-the-badge&logo=visualstudiocode" alt="Valaxy" />
+    <img src="https://img.shields.io/badge/Valaxy-SSG-6200ee?style=flat-square&logo=visualstudiocode" alt="Valaxy" />
   </a>
   <a href="https://decapcms.org/">
-    <img src="https://img.shields.io/badge/CMS-Decap-ff7e00?style=for-the-badge&logo=netlifycms" alt="CMS" />
+    <img src="https://img.shields.io/badge/CMS-Decap-ff7e00?style=flat-square&logo=netlifycms" alt="CMS" />
   </a>
   <a href="https://vercel.com/">
-    <img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel" alt="Vercel" />
+    <img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=flat-square&logo=vercel" alt="Vercel" />
   </a>
 </p>
 
 ---
 
-> **特别鸣谢**：本项目基于 [YunYouJun/valaxy](https://github.com/YunYouJun/valaxy) 的开源作品复刻而成。感谢原作者的优秀设计与开源精神。
->
-> ---
+## 为什么要做这个项目？
 
-## 写在前面
+我是一名正在努力学习前端开发的学生。在过去的一段时间里，我习惯使用 **Typora** 在本地记录笔记。虽然 Typora 的书写体验极佳，但随着笔记数量的增加，我发现：
 
-在前端学习的漫漫旅途中，知识的碎片化是最大的挑战。起初，我习惯使用 Typora 记录本地笔记，以此沉淀所学。然而，为了让这些宝贵的知识能够更便捷地查阅与回顾，同时也为了能与更多志同道合的朋友交流分享，我决定搭建这个属于自己的技术博客。通过深度定制 Valaxy 引擎并打通 Headless CMS 链路，它实现了“代码级控制”与“可视化创作”的无缝结合。
+1. **查阅不便**：本地笔记散落在不同文件夹，难以实现快速的交叉索引和随时随地的复习。
+2. **缺乏交流**：学习是一个输入与输出的过程，我希望有一个平台能将我的所思所想分享给更多志同道合的朋友，在交流中共同进步。
 
-## 核心亮点
+因此，我决定通过二次开发优秀开源项目，搭建这个属于我自己的技术博客站点。
 
-### 全栈 Auth 桥接架构
-针对纯静态站点（SSG）无法安全处理 GitHub OAuth 流程的痛点，自主开发了基于 Node.js 的 Serverless Functions 认证中转服务。该方案在保障 Secret 安全的前提下，打通了浏览器端与 GitHub API 的令牌交换链路。
+## 在原作者基础上的学习与思考
 
-### 极致性能体验
-利用 Vite 驱动的预渲染技术，所有博文在构建阶段即转化为静态 HTML。配合 UnoCSS 的按需扫描与原子化 CSS 特性，首屏加载时仅包含必要的样式依赖，实现毫秒级的 LCP 响应。
+本项目基于 [YunYouJun/valaxy](https://github.com/YunYouJun/valaxy) 进行二次开发。在阅读和修改源码的过程中，我收获颇丰：
 
-### 可视化内容建模
-深度集成 Decap CMS，通过 YAML 配置对 Markdown Schema 进行精准建模。支持 Web 端实时预览、图片自动上传托管、文章分类动态管理，实现了从起草到发布的全自动 CI/CD 流转。
+- **深度理解 SSG (静态站点生成)**：通过 Valaxy 了解到 Vite 驱动的预渲染机制，理解了为什么静态站点能拥有如此快的首屏加载速度。
+- **插件化架构思想**：原作者将主题、搜索、评论等功能高度插件化，这种解耦的设计思路对我以后设计组件和系统有很大的启发。
+- **现代化工具链**：第一次在实战中深度接触 **UnoCSS**（原子化 CSS）和 **Vue 3 Composition API**，深刻体会到了开发效率的提升。
 
-### 结构化面试题库
-专为前端求职场景设计的标签与分类系统。涵盖核心八股文、手撕代码题、高频算法及工程化架构，通过 Yun 主题的沉浸式侧边栏实现知识点的快速定位。
+## 我做了哪些改进？
 
-## 内容管理模型
+为了让博客更符合我的使用习惯和学习需求，我在原版的基础上进行了以下改进：
 
-针对静态站点传统的“协作难、发布慢”问题，本项目构建了双端并行的创作流。
+### 1. 引入 Headless CMS (Decap CMS)
+*   **改进原因**：传统的静态博客需要通过 Git 提交 Markdown 文件，在手机或没有开发环境的情况下很难发布内容。
+*   **改进意义**：我集成了 Decap CMS，通过配置 YAML 模型实现了**可视化内容管理**。现在我即使不在电脑前，也能通过浏览器发布和修改博文。
 
-### 前台查阅
-- 访问地址: [https://my-blog-puce-one.vercel.app](https://my-blog-puce-one.vercel.app)
-- 核心功能: 沉浸式阅读、分类索引、全站搜索、移动端适配。
+### 2. 自研 Serverless 认证中转服务
+*   **改进原因**：Decap CMS 在使用 GitHub OAuth 时，由于其是纯前端应用，无法安全地处理 Client Secret。
+*   **改进意义**：我基于 **Vercel Serverless Functions**（位于 `/api` 目录）手写了一个简单的认证后端。这不仅解决了登录安全性问题，也让我对 OAuth 2.0 授权流程和后端开发有了初步的实战经验。
 
-### 后台创作
-- 进入方式: 访问 [/admin/](https://my-blog-puce-one.vercel.app/admin/) 路径。
-- 管理流程:
-  1. 通过 GitHub OAuth 授权登录后台管理面板。
-  2. 进入“博文管理”集合，即可通过可视化编辑器进行富文本创作。
-  3. 支持上传本地图片直接托管至 GitHub 并自动生成 Markdown 链接。
-  4. 点击保存后，GitHub API 自动接收回写请求，通过 CI/CD 触发 Vercel 进行秒级实时同步。
+### 3. 构建结构化“八股文”知识库
+*   **改进原因**：作为学生，面试准备是重中之重，我需要一个专门的地方来整理前端面试题。
+*   **改进意义**：我利用 Valaxy 的导航和侧边栏系统，专门开辟了**结构化面试题库**模块，涵盖核心原理、手写代码、高频算法等，方便在手机上随时“刷题”和回顾。
 
-## 技术矩阵
+## 技术栈
 
-- 核心框架: Vue 3.x (Composition API)
-- 静态生成: Valaxy (基于 Vite 的 SSG 引擎)
-- 后端逻辑: Vercel Serverless Functions
-- 内容管理: Decap CMS + GitHub OAuth
-- 样式方案: UnoCSS + valaxy-theme-yun
-- 自动化: GitHub Actions CI/CD
+- **前端框架**: Vue 3.x (Composition API)
+- **静态生成**: Valaxy (Vite-based SSG)
+- **样式方案**: UnoCSS + valaxy-theme-yun
+- **内容管理**: Decap CMS
+- **后端支持**: Vercel Serverless Functions (Node.js)
+- **部署自动化**: GitHub Actions + Vercel
 
-## 项目结构
+## 快速开始
+
+如果你也想基于此版本搭建自己的博客：
 
 ```bash
-├── api/                # 后端逻辑：Serverless Functions 处理认证流
-├── components/         # 深度定制的 Vue 组件
-├── pages/              # 内容源文件
-│   ├── posts/          # Markdown 格式博文源码
-│   └── about/          # 关于页面 (作者/站点)
-├── public/
-│   ├── admin/          # CMS 静态入口、样式与配置文件
-│   ├── logo.png        # 站点 Logo
-│   └── me.jpg          # 作者头像
-├── site.config.ts      # 站点基础信息与元数据
-├── valaxy.config.ts    # 插件系统、主题扩展及 UnoCSS 配置
-└── vercel.json         # 生产环境路由重写规则
-```
-
-## 创作流
-
-1. 在线模式: 访问 [/admin/](https://my-blog-puce-one.vercel.app/admin/) 路径，通过可视化编辑器编写，Push 后自动触发 Vercel 构建。
-2. 本地模式: 在 pages/posts 中通过 Markdown 创作，利用 Git 命令进行版本控制。
-
-## 开发启动
-
-```bash
-# 克隆仓库
+# 1. 克隆
 git clone https://github.com/autopoet/my-blog.git
 
-# 安装依赖
+# 2. 安装
 pnpm install
 
-# 预览开发环境
+# 3. 运行预览
 pnpm run dev
 
-# 构建生产版本 (SSG)
+# 4. 构建 (SSG)
 pnpm run build
 ```
 
 ---
 
+> **致谢**：特别感谢 [YunYouJun](https://github.com/YunYouJun) 提供的优秀开源框架 Valaxy。
+
 <p align="center">
-  记录成长，思考未来。
+  期待与每一个优秀的你在代码的世界相遇。
 </p>
