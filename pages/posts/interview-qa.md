@@ -5,7 +5,6 @@ categories:
   - 前端八股
 tags:
   - JavaScript
-  - 面试
   - 基础
 ---
 
