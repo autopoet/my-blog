@@ -54,6 +54,7 @@ function sum(...numbers) {
 这是在 **ES2020 (ES11)** 中引入的极其实用的特性，大大减少了对 `undefined` 的检查。
 
 ### **可选链 (?.)**
+
 如果前面的值为 `null` 或 `undefined`，则直接返回 `undefined` 而不报错。
 
 ```javascript
@@ -64,6 +65,7 @@ console.log(user?.profile?.name); // undefined
 ```
 
 ### **空值合并 (??)**
+
 仅当左侧操作数为 `null` 或 `undefined` 时，才返回右侧操作数。与 `||` 不同，它不会过滤 `0` 或空字符串。
 
 ```javascript
@@ -77,6 +79,10 @@ const result2 = count ?? 10; // 0 (安全！)
 ## 4. 代理拦截：Proxy
 
 `Proxy` 用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）。它是 **Vue 3 响应式系统** 的核心。
+
+```js
+const p = new Proxy(target, handler);
+```
 
 ```javascript
 const target = { message: "hello" };
@@ -92,8 +98,11 @@ console.log(proxy.foo);     // 404 Not Found
 ```
 
 **Proxy vs Object.defineProperty**：
+
 1. `Proxy` 可以直接监听整个对象而非单一属性。
 2. `Proxy` 可以监听数组索引和长度的变化。
 3. `Proxy` 提供了多达 13 种拦截方法（trap）。
+
+![Axios与Proxy对比](/JS-Proxy.png)
 
 > **总结**：ES6+ 的语法不仅仅是“语法糖”，它们通过更严谨的语义（如 Proxy、Optional Chaining）极大提升了 JS 处理复杂业务逻辑的能力。

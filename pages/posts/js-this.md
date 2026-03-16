@@ -11,7 +11,7 @@ tags:
 
 > JavaScript 中的 `this` 是动态绑定的，它的值取决于函数的调用方式。
 
-### 1. 绑定规则
+## 1. 绑定规则
 
 - **默认绑定**：非严格模式下指向 `window`，严格模式下为 `undefined`。
 
@@ -68,11 +68,11 @@ const obj = {
 obj.sayName(); // 可能不是 "Dave"
 ```
 
-### 2. 优先级对比
+## 2. 优先级对比
 
 `new` 绑定 > 显式绑定 > 隐式绑定 > 默认绑定。
 
-### 3. call / apply / bind 的区别
+## 3. call / apply / bind 的区别
 
 - call：传参是一个个传，fn.call(obj, arg1, arg2)。立即执行。
 - apply：传参是数组，fn.apply(obj, [args])。立即执行。

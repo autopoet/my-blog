@@ -41,7 +41,9 @@ tags:
   - **绑定速度快**：直接操作 DOM 属性。
   - **唯一性**：同一个类型的事件只能绑定一次，后绑定的会覆盖之前的。
   - **局限性**：只支持冒泡，不支持捕获。
+
 - **示例**：
+
 ```javascript
 var btn = document.getElementById('btn');
 btn.onclick = fun1;
