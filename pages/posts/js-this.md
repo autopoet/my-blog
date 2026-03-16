@@ -71,17 +71,4 @@ obj.sayName(); // 可能不是 "Dave"
 
 `new` 绑定 > 显式绑定 > 隐式绑定 > 默认绑定。
 
-### 3. 练习代码
 
-```javascript
-const obj = {
-  name: 'MoSi',
-  sayHi() {
-    console.log(this.name);
-  }
-};
-
-obj.sayHi(); // MoSi
-const temp = obj.sayHi;
-temp(); // undefined (或报错，取决于模式)
-```
