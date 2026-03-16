@@ -139,16 +139,17 @@ console.log('4'); // 同步
 // 输出顺序: 1, 4, 3, 2
 ```
 
-### 7. 语法糖：async/await
+### 7. 语法糖：async & await
 
-async & await
-ES7提出的关于异步的终极解决方案
-async/await是Generator的语法糖
-  ○ 内置执行器：Generator函数的执行必须靠执行器，不能一次执行完成
-  ○ 可读性更好：async和 await，比起使用 *号和 yield，语义清晰明了
-如果不使用async/await的话，Promise需要通过链式调用执行then之后的代码
-Promise搭配async/await的使用才是正解！
-async/await基于Promise。async把promise包装了一下，async函数更简洁，不需要像promise一样需要写then，不需要写匿名函数处理promise的resolve值。
-async是Generator函数的语法糖，async函数返回值是promise对象，比generator函数返回值 iterator对象更方便，可使用 await 代替then 指定下一步操作(await==promise.then)
+#### **async/await是Generator的语法糖**
+- 内置执行器：Generator函数的执行必须靠执行器，不能一次执行完成
+- 可读性更好：`async` 代表异步，`await` 代表等待,比起使用 `*`号和 `yield`，语义清晰明了
+- 如果不使用async/await的话，Promise需要通过链式调用执行then之后的代码
+
+#### **Promise搭配async/await的使用才是正解！**
+- 消灭“匿名函数”:async/await基于Promise。async把promise包装了一下，async函数更简洁，不需要像promise一样需要写then，不需要写匿名函数处理promise的resolve值。
+- async函数返回值是promise对象，比generator函数返回值 iterator对象更方便，可使用 await 代替then 指定下一步操作(`await==promise.then`)
+- 错误处理更统一:在 Promise 中，你需要用 `.catch()`。如果有嵌套异步，报错位置很难定位。
+使用 async/await，你可以直接用 `try...catch` 捕获所有异步环节的错误。
 
 > **总结**：Promise 的出现规范了异步操作的标准化，通过链式调用解决了“回调地狱”问题。理解其状态机模型和在事件循环中的位置是掌握异步编程的关键。
