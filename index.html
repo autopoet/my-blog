@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logo.png">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.GmvQZSc7.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/framework.BIKMgSGg.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DBaTBLhD.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.B1jnsCmX.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BdcnXKr1.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DVAma8BN.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.ByRbpzpv.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.DmJw-jWE.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.SHw_rTuU.css">
+</head>
+<body>
+  <div id="app"></div>
+  
+</body>
+</html>

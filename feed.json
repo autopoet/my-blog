@@ -1,0 +1,86 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "前端学习笔记",
+    "home_page_url": "https://valaxy.site/",
+    "feed_url": "https://valaxy.site/feed.json",
+    "description": "一名正在努力进修的前端开发者 | 记录成长与思考",
+    "icon": "https://valaxy.site/me.jpg",
+    "author": {
+        "name": "autopoet",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "https://valaxy.site/posts/CampusHub_Core_Highlights",
+            "content_html": "<p>本项目不仅是一个简单的 Vue 3 应用，它在<strong>工程化思维</strong>、<strong>性能优化</strong>和<strong>交互设计</strong>上参考了大厂（如字节、阿里、腾讯）的常见实践。以下是四大核心亮点，旨在帮助你从“代码小白”进化为“</p>\n<br/><p>访问 <a href=\"https://valaxy.site/posts/CampusHub_Core_Highlights\" target=\"_blank\">https://valaxy.site/posts/CampusHub_Core_Highlights</a> 阅读全文。</p>",
+            "url": "https://valaxy.site/posts/CampusHub_Core_Highlights",
+            "title": "CampusHub 核心技术亮点与深度解析",
+            "date_modified": "2026-03-15T00:00:00.000Z",
+            "date_published": "2026-03-15T00:00:00.000Z",
+            "author": {
+                "name": "autopoet",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://valaxy.site/posts/CampusHub_Master_Guide_Final",
+            "content_html": "<blockquote>\n<p><strong>导语</strong>：本手册将 CampusHub 从一个简单的 Vue 项目打造成具有“工程深度”的大厂面试作品。涵盖了可直接复制的简历内容、核心技术亮点的深度解析、以及面试高频 Q&amp;A。</p>\n</blockquote>\n<hr>\n<br/><p>访问 <a href=\"https://valaxy.site/posts/CampusHub_Master_Guide_Final\" target=\"_blank\">https://valaxy.site/posts/CampusHub_Master_Guide_Final</a> 阅读全文。</p>",
+            "url": "https://valaxy.site/posts/CampusHub_Master_Guide_Final",
+            "title": "CampusHub 简历与技术面试通关全攻略",
+            "date_modified": "2026-03-15T00:00:00.000Z",
+            "date_published": "2026-03-15T00:00:00.000Z",
+            "author": {
+                "name": "autopoet",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://valaxy.site/posts/project-experience",
+            "content_html": "<h1>简历项目经历叙述</h1>\n<p>如果您需要将本项目写在简历中，可以直接参考以下内容进行修改：</p>\n<hr>\n<h3>项目名称：高性能全栈技术博客与可视化管理系统</h3>\n<p><strong>技术栈</strong>：Vue 3 (Composit</p>\n<br/><p>访问 <a href=\"https://valaxy.site/posts/project-experience\" target=\"_blank\">https://valaxy.site/posts/project-experience</a> 阅读全文。</p>",
+            "url": "https://valaxy.site/posts/project-experience",
+            "title": "简历项目经历备查（可直接复制）",
+            "date_modified": "2026-03-15T00:00:00.000Z",
+            "date_published": "2026-03-15T00:00:00.000Z",
+            "author": {
+                "name": "autopoet",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://valaxy.site/posts/interview-qa",
+            "content_html": "<h3>1. 什么是原型 (Prototype)？</h3>\n<p>每一个 JavaScript 对象（null 除外）在创建的时候就会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型&quot;继承&quot;</p>\n<br/><p>访问 <a href=\"https://valaxy.site/posts/interview-qa\" target=\"_blank\">https://valaxy.site/posts/interview-qa</a> 阅读全文。</p>",
+            "url": "https://valaxy.site/posts/interview-qa",
+            "title": "JS 基础：彻底搞懂原型与原型链",
+            "date_modified": "2026-03-14T00:00:00.000Z",
+            "date_published": "2026-03-14T00:00:00.000Z",
+            "author": {
+                "name": "autopoet",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://valaxy.site/posts/resume-guide",
+            "content_html": "<p>对于前端校招/实习生来说，一个“能跑起来”的博客很普通，但一个“注重工程化实践”的博客很吸睛。你可以参考以下方式将该项目写在简历中。</p>\n<h2>1. 项目概况 (Project Summary)</h2>\n<ul>\n<li></li>\n</ul>\n<br/><p>访问 <a href=\"https://valaxy.site/posts/resume-guide\" target=\"_blank\">https://valaxy.site/posts/resume-guide</a> 阅读全文。</p>",
+            "url": "https://valaxy.site/posts/resume-guide",
+            "title": "简历专题：如何把这个博客项目写在简历上？",
+            "date_modified": "2026-03-14T00:00:00.000Z",
+            "date_published": "2026-03-14T00:00:00.000Z",
+            "author": {
+                "name": "autopoet",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "https://valaxy.site/posts/template",
+            "content_html": "<blockquote>\n<p>[!TIP]<br>\n这是一个写作模板。你可以直接复制这个文件的内容来创建新文章。<br>\n记得修改 <code>categories</code> 里的分类，这样导航栏才能正确过滤出你的文章。</p>\n</blockquote>\n<h3>题目/知识点标题</h3>\n<br/><p>访问 <a href=\"https://valaxy.site/posts/template\" target=\"_blank\">https://valaxy.site/posts/template</a> 阅读全文。</p>",
+            "url": "https://valaxy.site/posts/template",
+            "title": "博客写作模板 (建议复制使用)",
+            "date_modified": "2026-03-14T00:00:00.000Z",
+            "date_published": "2026-03-14T00:00:00.000Z",
+            "author": {
+                "name": "autopoet",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}

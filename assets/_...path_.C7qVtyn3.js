@@ -1,0 +1,1 @@
+import"./chunks/vue-i18n.DBaTBLhD.js";import{a,u as r,d as t}from"./chunks/vue-router.B1jnsCmX.js";import{B as s,a3 as n,ad as p,ab as c}from"./framework.BIKMgSGg.js";const u=s({__name:"[...path]",setup(i){const o=a(),e=r();return n(()=>{e.path!=="/"&&e.path.endsWith("/")&&o.replace(e.path.slice(0,-1))}),(f,m)=>(c(),p("div"))}});typeof t=="function"&&t(u);export{u as default};

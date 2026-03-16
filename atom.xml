@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://valaxy.site/</id>
+    <title>前端学习笔记</title>
+    <updated>2026-03-16T08:08:52.672Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>autopoet</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://valaxy.site/"/>
+    <link rel="self" href="https://valaxy.site/atom.xml"/>
+    <subtitle>一名正在努力进修的前端开发者 | 记录成长与思考</subtitle>
+    <logo>https://valaxy.site/me.jpg</logo>
+    <icon>https://valaxy.site/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2026 © autopoet</rights>
+    <entry>
+        <title type="html"><![CDATA[CampusHub 核心技术亮点与深度解析]]></title>
+        <id>https://valaxy.site/posts/CampusHub_Core_Highlights</id>
+        <link href="https://valaxy.site/posts/CampusHub_Core_Highlights"/>
+        <updated>2026-03-15T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>本项目不仅是一个简单的 Vue 3 应用，它在<strong>工程化思维</strong>、<strong>性能优化</strong>和<strong>交互设计</strong>上参考了大厂（如字节、阿里、腾讯）的常见实践。以下是四大核心亮点，旨在帮助你从“代码小白”进化为“</p>
+<br/><p>访问 <a href="https://valaxy.site/posts/CampusHub_Core_Highlights" target="_blank">https://valaxy.site/posts/CampusHub_Core_Highlights</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>autopoet</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-15T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CampusHub 简历与技术面试通关全攻略]]></title>
+        <id>https://valaxy.site/posts/CampusHub_Master_Guide_Final</id>
+        <link href="https://valaxy.site/posts/CampusHub_Master_Guide_Final"/>
+        <updated>2026-03-15T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p><strong>导语</strong>：本手册将 CampusHub 从一个简单的 Vue 项目打造成具有“工程深度”的大厂面试作品。涵盖了可直接复制的简历内容、核心技术亮点的深度解析、以及面试高频 Q&amp;A。</p>
+</blockquote>
+<hr>
+<br/><p>访问 <a href="https://valaxy.site/posts/CampusHub_Master_Guide_Final" target="_blank">https://valaxy.site/posts/CampusHub_Master_Guide_Final</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>autopoet</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-15T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[简历项目经历备查（可直接复制）]]></title>
+        <id>https://valaxy.site/posts/project-experience</id>
+        <link href="https://valaxy.site/posts/project-experience"/>
+        <updated>2026-03-15T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h1>简历项目经历叙述</h1>
+<p>如果您需要将本项目写在简历中，可以直接参考以下内容进行修改：</p>
+<hr>
+<h3>项目名称：高性能全栈技术博客与可视化管理系统</h3>
+<p><strong>技术栈</strong>：Vue 3 (Composit</p>
+<br/><p>访问 <a href="https://valaxy.site/posts/project-experience" target="_blank">https://valaxy.site/posts/project-experience</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>autopoet</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-15T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JS 基础：彻底搞懂原型与原型链]]></title>
+        <id>https://valaxy.site/posts/interview-qa</id>
+        <link href="https://valaxy.site/posts/interview-qa"/>
+        <updated>2026-03-14T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h3>1. 什么是原型 (Prototype)？</h3>
+<p>每一个 JavaScript 对象（null 除外）在创建的时候就会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型&quot;继承&quot;</p>
+<br/><p>访问 <a href="https://valaxy.site/posts/interview-qa" target="_blank">https://valaxy.site/posts/interview-qa</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>autopoet</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-14T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[简历专题：如何把这个博客项目写在简历上？]]></title>
+        <id>https://valaxy.site/posts/resume-guide</id>
+        <link href="https://valaxy.site/posts/resume-guide"/>
+        <updated>2026-03-14T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>对于前端校招/实习生来说，一个“能跑起来”的博客很普通，但一个“注重工程化实践”的博客很吸睛。你可以参考以下方式将该项目写在简历中。</p>
+<h2>1. 项目概况 (Project Summary)</h2>
+<ul>
+<li></li>
+</ul>
+<br/><p>访问 <a href="https://valaxy.site/posts/resume-guide" target="_blank">https://valaxy.site/posts/resume-guide</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>autopoet</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-14T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[博客写作模板 (建议复制使用)]]></title>
+        <id>https://valaxy.site/posts/template</id>
+        <link href="https://valaxy.site/posts/template"/>
+        <updated>2026-03-14T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>[!TIP]<br>
+这是一个写作模板。你可以直接复制这个文件的内容来创建新文章。<br>
+记得修改 <code>categories</code> 里的分类，这样导航栏才能正确过滤出你的文章。</p>
+</blockquote>
+<h3>题目/知识点标题</h3>
+<br/><p>访问 <a href="https://valaxy.site/posts/template" target="_blank">https://valaxy.site/posts/template</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>autopoet</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2026-03-14T00:00:00.000Z</published>
+    </entry>
+</feed>
