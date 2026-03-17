@@ -10,9 +10,6 @@ title: 关于作者
 
 一名正在努力进修的前端开发者，目前主要活动在 Vue 3 与 Vite 生态中。
 
-### 自动诗人 (autopoet)
-
-这个名字代表了我对技术的理想：**像诗人追求韵律一样追求代码的优雅，像自动化流程一样追求系统的严谨。**
 
 ### 我的技术探索
 
@@ -23,7 +20,7 @@ title: 关于作者
 ### 找到我
 
 - **GitHub**: [autopoet](https://github.com/autopoet)
-- **E-Mail**: [ash132510@gmail.com](mailto:ash132510@gmail.com)
+- **E-Mail**: [autopoet@163.com](mailto:autopoet@163.com)
 
 ---
 
