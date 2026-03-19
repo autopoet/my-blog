@@ -25,7 +25,7 @@ export default defineSiteConfig({
     },
     {
       name: 'E-Mail',
-      link: 'mailto:ash132510@gmail.com',
+      link: 'mailto:autopoet@163.com',
       icon: 'i-ri-mail-line',
       color: '#8E71C1',
     },
