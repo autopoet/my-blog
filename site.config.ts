@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://valaxy.site/',
+  url: 'https://blog.autopoet.cn/',
   lang: 'zh-CN',
   title: '前端学习笔记',
   favicon: '/logo.png',
