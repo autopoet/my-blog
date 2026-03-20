@@ -1,6 +1,6 @@
 ---
 title: JS 进阶：Promise 异步编程
-date: 2025-10-05
+date: 2025-11-22
 categories:
   - 啃啃原理
 tags:
