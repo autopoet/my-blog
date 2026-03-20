@@ -2,7 +2,7 @@
 title: ES6+ 进阶：现代 JavaScript 常用新特性
 date: 2025-10-08
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - JavaScript
   - ES6+

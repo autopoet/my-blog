@@ -2,7 +2,7 @@
 title: JS 进阶：Promise 异步编程
 date: 2025-10-05
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - JavaScript
   - 进阶

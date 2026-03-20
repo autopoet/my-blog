@@ -2,7 +2,7 @@
 title: Vue 实战类高频面试题 (Vue 3)
 date: 2025-10-25
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - Vue
   - 核心

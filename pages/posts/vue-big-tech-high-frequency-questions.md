@@ -2,7 +2,7 @@
 title: Vue 大厂高频面试题
 date: 2025-10-28
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - Vue
   - 核心

@@ -2,7 +2,7 @@
 title: HTML 核心知识总结
 date: 2025-10-03
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - HTML
   - 基础

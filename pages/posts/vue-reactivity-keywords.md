@@ -2,7 +2,7 @@
 title: Vue 响应式系统高频面试关键词
 date: 2025-10-16
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - Vue
   - 面试

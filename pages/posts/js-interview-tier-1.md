@@ -2,7 +2,7 @@
 title: JavaScript 面试题 - 第一梯队（极高频）
 date: 2025-10-27
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - JavaScript
   - 面试

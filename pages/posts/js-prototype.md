@@ -2,7 +2,7 @@
 title: JS 基础：原型与原型链
 date: 2025-10-04
 categories:
-  - 前端八股
+  - 啃啃原理
 tags:
   - JavaScript
   - 基础
