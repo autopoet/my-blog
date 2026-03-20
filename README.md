@@ -2,10 +2,10 @@
   <img src="./public/logo.png" width="120" height="120" alt="autopoet blog logo" />
 </p>
 
-<h1 align="center">墨思 (MoSi) - 我的前端学习与成长记录</h1>
+<h1 align="center">>基于Valaxy 构建的个人博客</h1>
 
 <p align="center">
-  <strong>一个基于 Vue 3 & Valaxy 构建的个人技术博客，记录从零到一的进阶之路</strong>
+  <strong>我的前端学习与成长记录，记录从零到一的进阶之路</strong>
 </p>
 
 <p align="center">
