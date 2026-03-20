@@ -5,11 +5,11 @@ categories:
   - 前端八股
 tags:
   - Vue
-  - 源码原理
-  - 深度剖析
+  - 核心
+  - 面试
 ---
 
-# Vue 原理类高频面试题解答
+# Vue 原理类高频面试题
 
 ## 1. Vue 的响应式系统中，Object.defineProperty 和 Proxy 在实现上有何本质区别？Vue3 改用 Proxy 解决了哪些痛点？
 **提示**：数组监听、动态属性、性能开销
