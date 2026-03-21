@@ -5,7 +5,7 @@
 <h1 align="center">基于Valaxy 构建的个人博客</h1>
 
 <p align="center">
-  <strong>我的前端学习与成长记录，记录从零到一的进阶之路</strong>
+  <strong>我的前端学习与成长记录</strong>
 </p>
 
 <p align="center">
