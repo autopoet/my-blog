@@ -24,3 +24,7 @@ tags:
 <p align="center">
   <img v-lazy="'https://picsum.photos/1000/600?random=1'" alt="懒加载测试图片" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </p>
+
+<!-- 测试评论系统 -->
+<ArticleComments slug="frontend-code-output-questions" />
+
