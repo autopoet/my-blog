@@ -46,3 +46,6 @@ tags:
   * 用户信息、登录状态、权限配置。
   * 购物车、全局通知、暗黑模式切换。
 
+
+
+<ArticleComments slug="vue-components-communication" />

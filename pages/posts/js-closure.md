@@ -16,3 +16,6 @@ tags:
 
 内部函数引用了外部函数作用域中的变量。简单来说，闭包 = 函数 + 该函数能访问的外部变量环境。
 
+
+
+<ArticleComments slug="js-closure" />

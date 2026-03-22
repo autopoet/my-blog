@@ -13,3 +13,6 @@ tags:
 
 # Vue 响应式核心关键词详解
 
+
+
+<ArticleComments slug="vue-reactivity-keywords" />

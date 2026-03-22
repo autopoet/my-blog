@@ -40,3 +40,6 @@ tags:
     - 合成线程将多个图层按层级合成最终画面，并发送给 GPU 显示。
     - 仅触发合成的操作（如 `transform`）性能最优。
 
+
+
+<ArticleComments slug="browser-principles-questions" />

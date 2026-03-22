@@ -84,3 +84,6 @@ btn.addEventListener('click', showMessage2, false);
 btn.removeEventListener('click', showMessage1, false);
 ```
 
+
+
+<ArticleComments slug="js-browser-events" />

@@ -18,3 +18,6 @@ tags:
 - **Libuv**：处理异步 I/O 的核心库（实现事件循环）。
 - **非阻塞 I/O**：让同一线程可以并发处理成千上万个请求。
 
+
+
+<ArticleComments slug="nodejs-basics" />

@@ -33,3 +33,6 @@ vue create my-project
 npm create vue@latest
 ```
 
+
+
+<ArticleComments slug="vue-setup" />

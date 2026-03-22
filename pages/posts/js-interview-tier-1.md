@@ -34,3 +34,6 @@ JS 运行时主要包含：
 4. 尝试进行页面渲染。
 5. 开始下一个宏任务。
 
+
+
+<ArticleComments slug="js-interview-tier-1" />

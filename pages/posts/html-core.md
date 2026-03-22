@@ -22,3 +22,6 @@ tags:
 
 - **常用标签**：`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`。
 
+
+
+<ArticleComments slug="html-core" />

@@ -19,3 +19,6 @@ tags:
 -   **后缀选择**：`.com` 是硬通货，`.me` 适合个人主页，`.io` 或 `.dev` 适合开发者社区。
 -   **域名起名**：尽量简短、好记，最好包含你的个人 ID。
 
+
+
+<ArticleComments slug="domain-config" />

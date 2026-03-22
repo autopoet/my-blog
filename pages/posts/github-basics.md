@@ -21,3 +21,6 @@ tags:
 -   **添加到 GitHub**：在 Settings -> SSH and GPG keys 中粘贴 `.pub` 文件内容。
 -   **校验连接**：`ssh -T git@github.com`
 
+
+
+<ArticleComments slug="github-basics" />

@@ -23,3 +23,6 @@ tags:
 - **FIN**：服务器准备好关闭连接后，发送 FIN 包。
 - **ACK**：客户端收到服务器的 FIN 包后，回复 ACK 包，连接关闭。
 
+
+
+<ArticleComments slug="computer-networks-basics-tier-2" />

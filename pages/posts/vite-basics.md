@@ -20,3 +20,6 @@ tags:
 | **HMR (热更新)** | 随着文件增多而变慢 | **恒定** (由于缓存机制) |
 | **配置复杂度** | 较高 (loader/plugin 繁琐) | **开箱即用** (配置极简) |
 
+
+
+<ArticleComments slug="vite-basics" />

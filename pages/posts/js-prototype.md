@@ -16,3 +16,6 @@ tags:
 - 原型对象包含共享的属性和方法
 - 实例通过 `__proto__` 访问其构造函数的原型
 
+
+
+<ArticleComments slug="js-prototype" />

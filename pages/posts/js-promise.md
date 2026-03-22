@@ -29,3 +29,6 @@ Promise 实例在其生命周期内只可能处于以下三种状态之一：
   - `Pending` -> `Fulfilled` : **Resolved**（已完成）
   - `Pending` -> `Rejected` : **Rejected**（已拒绝）
 
+
+
+<ArticleComments slug="js-promise" />

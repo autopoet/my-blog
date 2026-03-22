@@ -25,3 +25,6 @@ tags:
 - `v-if` 在条件很少变化的场景性能更优，因为避免了初始不必要的渲染。
 - `v-show` 初始渲染消耗高，但切换速度快，适合频繁显示隐藏的场景。
 
+
+
+<ArticleComments slug="vue-practical-high-frequency-questions" />

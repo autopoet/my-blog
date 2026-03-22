@@ -124,3 +124,6 @@ export const lazyDirective: Directive<HTMLImageElement, string> = {
 | **JS 设计模式** | 注册中心、单例模式、观察者模式 |
 | **Vue 指令生命周期** | mounted vs updated, 内存泄漏防范 |
 | **DOM 操作** | 异步 API vs 同步 API 阻塞性能 |
+
+
+<ArticleComments slug="project-highlight-lazyload" />

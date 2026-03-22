@@ -16,3 +16,6 @@ tags:
 - **ES Module (ESM)**：浏览器与现代前端标准，使用 `import/export`。是静态编译，编译时加载，输出的是值的只读引用（绑定）。
 - **运行机制**：ESM 在解析阶段建立依赖树，执行阶段再填充具体值，支持 Tree-Shaking。
 
+
+
+<ArticleComments slug="js-interview-tier-4" />

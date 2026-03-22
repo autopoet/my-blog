@@ -13,3 +13,6 @@ tags:
 
 # Vue 响应式系统原理深度解析
 
+
+
+<ArticleComments slug="vue-reactivity" />

@@ -189,3 +189,6 @@ export default async function handler(req, res) {
 “完全不会，我在代码里落实了前端**‘优雅降级（Graceful Degradation）’**的思想。
 我使用 `try-catch-finally` 包裹了 await 请求逻辑。如果服务挂掉抛出异常，catch 块捕捉它并在底层安静地输出给控制台，同时强制给响应式变量赋一个保底数字 `0`。然后 `finally` 阶段保证关闭 loading 骨架。
 对于用户来说，极端情况也只是看到‘0浏览’字样，绝不牵连、阻塞博客的正文渲染。以不伤大雅的细节缺失，保全了整个页面核心内容的高可用。”
+
+
+<ArticleComments slug="project-highlight-pageviews" />

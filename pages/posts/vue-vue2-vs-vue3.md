@@ -12,3 +12,6 @@ tags:
 
 > **一句话定义**：Vue 3 是对 Vue 2 的一次彻底重构。它在保留声明式编程的基础上，通过 **Proxy 响应式** 和 **Composition API** 解决了复杂逻辑复用难、底层性能瓶颈等痛点。
 
+
+
+<ArticleComments slug="vue-vue2-vs-vue3" />

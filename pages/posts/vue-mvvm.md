@@ -47,3 +47,6 @@ graph LR
 
 > **核心思想**：**View 和 Model 完全解耦。** ViewModel 负责监控 Model 数据的变化并通知 View 更新，同时也监听 View 的交互来修改 Model。
 
+
+
+<ArticleComments slug="vue-mvvm" />

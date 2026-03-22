@@ -75,3 +75,6 @@ Vue.js 中常用的指令主要包括：
 - **deactivated**：keep-alive 专属，组件被移除时调用。
 - **errorCaptured**：错误被捕获时调用。
 
+
+
+<ArticleComments slug="vue-big-tech-high-frequency-questions" />

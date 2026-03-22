@@ -31,3 +31,6 @@ tags:
 - 加入 **loading skeleton** 或 **fallback** 机制防止页面完全空白
 - 使用**性能监控平台**（如 Sentry 等开源库 or 公司自研的平台）追踪首屏渲染失败
 
+
+
+<ArticleComments slug="frontend-engineering-high-frequency-questions" />

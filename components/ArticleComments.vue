@@ -25,7 +25,7 @@ onMounted(async () => {
   }
 })
 
-// 2. 提交新评论 
+// 2. 提交新评论
 const submitComment = async () => {
   // 防止空内容和连击重复提交
   if (!content.value.trim() || isSubmitting.value) return
@@ -44,7 +44,7 @@ const submitComment = async () => {
   // 不等服务器慢吞吞得返回，我们“假装”它已经成功了，直接在前端把它推入数组的最顶部
   // 这样用户会觉得点击发送按钮“瞬间”就收到了反馈，极致的流畅体验！
   comments.value.unshift(newComment)
-  
+
   // 提前把输入框清空
   const tempContent = content.value
   content.value = ''
@@ -83,26 +83,26 @@ const submitComment = async () => {
 
 <template>
   <div class="article-comments" style="margin-top: 50px; border-top: 1px solid #eaecef; padding-top: 30px;">
-    <h3 style="margin-bottom: 20px; font-size: 1.3em;">留言板 (全栈交互演示)</h3>
-    
+    <h3 style="margin-bottom: 20px; font-size: 1.3em;">留言板</h3>
+
     <!-- 发布表单区域 -->
     <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; background: #fafafa; padding: 20px; border-radius: 8px;">
-      <input 
-        v-model="author" 
-        type="text" 
-        placeholder="你的昵称 (选填)" 
+      <input
+        v-model="author"
+        type="text"
+        placeholder="你的昵称 (选填)"
         style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; max-width: 300px; font-size: 14px; background: white;"
       />
-      <textarea 
-        v-model="content" 
-        placeholder="写下你的想法... (前端防XSS注入测试：输入 <script>alert(1)</script> 看看会不会有恶意的弹窗攻击)" 
+      <textarea
+        v-model="content"
+        placeholder="写下你的想法... (前端防XSS注入测试：输入 <script>alert(1)</script> 看看会不会有恶意的弹窗攻击)"
         rows="4"
         style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-size: 14px; font-family: inherit; background: white;"
       ></textarea>
-      
+
       <!-- 提交防抖与视觉反馈反馈锁定 -->
-      <button 
-        @click="submitComment" 
+      <button
+        @click="submitComment"
         :disabled="!content.trim() || isSubmitting"
         style="align-self: flex-start; padding: 10px 24px; background: #0078d7; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.2s ease;"
         :style="{ opacity: (!content.trim() || isSubmitting) ? 0.4 : 1 }"
@@ -119,7 +119,7 @@ const submitComment = async () => {
       <!-- 循环渲染每一条留言 -->
       <div v-for="(item, index) in comments" :key="index" style="padding: 16px; border: 1px solid #eee; border-radius: 8px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
         <div style="font-size: 0.9em; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-          <strong style="color: #333;">@{{ item.author }}</strong> 
+          <strong style="color: #333;">@{{ item.author }}</strong>
           <span style="color: #999; font-size: 0.85em;">{{ item.date }}</span>
         </div>
         <!-- 重点防线：Vue 使用双花括号输出文本，会自动对其中包含的 HTML 等特殊符号进行转义！ -->

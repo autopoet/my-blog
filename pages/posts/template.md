@@ -14,3 +14,6 @@ tags:
 ## 题目/知识点标题
 
 在此处编写你的笔记内容...
+
+
+<ArticleComments slug="template" />

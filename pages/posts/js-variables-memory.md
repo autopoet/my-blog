@@ -39,3 +39,6 @@ console.log(b); // ReferenceError: Cannot access 'b' before initialization
 let b = 2;
 ```
 
+
+
+<ArticleComments slug="js-variables-memory" />

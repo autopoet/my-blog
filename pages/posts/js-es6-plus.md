@@ -28,3 +28,6 @@ const [first, second] = [10, 20, 30];
 console.log(first); // 10
 ```
 
+
+
+<ArticleComments slug="js-es6-plus" />

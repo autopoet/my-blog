@@ -69,3 +69,6 @@ const obj = {
 obj.sayName(); // 可能不是 "Dave"
 ```
 
+
+
+<ArticleComments slug="js-this" />

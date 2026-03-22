@@ -19,3 +19,6 @@ tags:
 * **解决 Vue 2 遗留痛点**：由于采用了 Proxy，可以监听属性的新增、删除及数组索引变化，不再需要 `$set`。
 * **按需追踪（性能优化）**：Proxy 是 **惰性代理**，只有在属性被实际访问时才进行深层劫持。
 
+
+
+<ArticleComments slug="vue-reactivity-new" />

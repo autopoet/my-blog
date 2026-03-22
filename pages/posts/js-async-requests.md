@@ -12,3 +12,6 @@ tags:
 
 > **一句话定义**：Ajax 是一种异步通信技术方案；XMLHttpRequest (XHR) 是其最早的浏览器实现；Fetch 是现代原生的 Promise 替代品；而 Axios 是目前最流行的同构请求库。
 
+
+
+<ArticleComments slug="js-async-requests" />

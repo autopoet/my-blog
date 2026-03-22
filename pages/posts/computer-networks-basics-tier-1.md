@@ -30,3 +30,6 @@ tags:
 > **真相**：在网络传输中，GET 和 POST 都是明文传输。如果不使用 HTTPS，黑客抓包都能看得一清二楚。
 > **所谓的“安全”**：仅仅是因为 GET 的参数会留在浏览器历史记录、服务器日志里，容易被旁边的人看到，而 POST 的数据在 Body 里，相对隐蔽一点点。
 
+
+
+<ArticleComments slug="computer-networks-basics-tier-1" />

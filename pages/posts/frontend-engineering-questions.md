@@ -24,3 +24,6 @@ tags:
 | **值的处理** | **值的拷贝**（导出后原模块变化不影响已导入的值） | **值的引用**（导入处反映导出模块的实时变化） |
 | **Tree-shaking** | **不支持**（动态特性导致无法准确剔除） | **原生支持** |
 
+
+
+<ArticleComments slug="frontend-engineering-questions" />
