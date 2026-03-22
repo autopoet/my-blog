@@ -15,3 +15,12 @@ tags:
 ## 题目列表
 
 (内容待填充)
+
+<!-- 下面是测试懒加载效果的代码 -->
+<div style="height: 1200px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; border: 2px dashed #ccc; margin: 20px 0; color: #999;">
+  请继续向下滑动，到底部图片才会开始加载...
+</div>
+
+<p align="center">
+  <img v-lazy="'https://picsum.photos/1000/600?random=1'" alt="懒加载测试图片" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+</p>
