@@ -16,6 +16,8 @@ tags:
 - 原型对象包含共享的属性和方法
 - 实例通过 `__proto__` 访问其构造函数的原型
 
+---
+
 ## 2. 什么是原型链？
 
 - 当访问对象属性时，如果对象本身没有，会通过 `__proto__` 向上查找
@@ -24,11 +26,15 @@ tags:
 
 ![JavaScript 原型链示意图](/JS-Prototype.png)
 
+---
+
 ## 3. 查找逻辑
 
 - 第一站：在 `person` 对象自身找。
 - 第二站：顺着 `person.__proto__` 找到 `Person.prototype` 找。
 - 终点站：顺着链条一直找到 `Object.prototype`。如果到 `null` 还没找到，返回 `undefined`。
+
+---
 
 ## 4. 示例代码
 
@@ -57,6 +63,8 @@ console.log(Person.prototype.__proto__ === Object.prototype); // true
 console.log(Object.prototype.__proto__); // null
 ```
 
+---
+
 ## 5. 深度理解 `new`
 
 当执行 `new Student()` 时，JS 做了三件事：
@@ -64,6 +72,8 @@ console.log(Object.prototype.__proto__); // null
 - 创建一个空对象。
 - 连线：将新对象的 `__proto__` 指向 `Student.prototype`。
 - 注入：将 `this` 指向新对象并运行构造函数代码。
+
+---
 
 ## 6. 函数的本质
 

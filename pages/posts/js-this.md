@@ -68,9 +68,13 @@ const obj = {
 obj.sayName(); // 可能不是 "Dave"
 ```
 
+---
+
 ## 2. 优先级对比
 
 `new` 绑定 > 显式绑定 > 隐式绑定 > 默认绑定。
+
+---
 
 ## 3. call / apply / bind 的区别
 

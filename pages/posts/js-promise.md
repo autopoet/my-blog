@@ -28,6 +28,8 @@ Promise 实例在其生命周期内只可能处于以下三种状态之一：
   - `Pending` -> `Fulfilled` : **Resolved**（已完成）
   - `Pending` -> `Rejected` : **Rejected**（已拒绝）
 
+---
+
 ## 2. 基本用法：Executor 构造函数
 
 通过 `new Promise()` 创建实例时，需要传入一个回调函数（称为 **executor**），它会被立即执行。
@@ -50,6 +52,8 @@ const promise = new Promise((resolve, reject) => {
 - **情况二**：传入另外一个 Promise，则原 Promise 的状态将由这个新的 Promise 决定。
 - **情况三**：传入一个 **thenable** 对象（实现 `then` 方法的对象），Promise 会执行该 `then` 方法并根据结果决定状态。
 
+---
+
 ## 3. 实例方法 (Prototype Methods)
 
 ### **then()**
@@ -71,12 +75,16 @@ const promise = new Promise((resolve, reject) => {
 
 无论 Promise 最终状态如何，都会执行的操作。
 
+---
+
 ## 4. 静态方法 (Static Methods)
 
 - **Promise.resolve() / .reject()**：快速返回一个特定状态的 Promise 实例。
 - **Promise.all([p1, p2, ...])**：所有 Promise 都成功时才成功，返回结果数组；只要有一个失败就立即失败。
 - **Promise.race([p1, p2, ...])**：返回第一个“敲定”（无论成功失败）的 Promise 的结果。
 - **Promise.allSettled([p1, p2, ...])**：等待所有 Promise 都敲定，返回一个描述每个结果的对象数组，永不失败。
+
+---
 
 ## 5. 示例代码
 
@@ -106,6 +114,8 @@ Promise.allSettled([promise1, promise2, promise3])
 //   { status: 'rejected', reason: 'error' }
 // ]
 ```
+
+---
 
 ## 6. 异步机制与事件循环
 
@@ -138,6 +148,8 @@ console.log('4'); // 同步
 
 // 输出顺序: 1, 4, 3, 2
 ```
+
+---
 
 ## 7. 语法糖：async & await
 
