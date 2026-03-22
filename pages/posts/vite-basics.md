@@ -1,6 +1,6 @@
 ---
 title: Vite 基础教程
-date: 2026-01-10
+date: 2025-11-21
 categories:
   - 学学技术
 tags:
