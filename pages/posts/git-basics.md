@@ -1,6 +1,6 @@
 ---
-title: Git 基础使用指南
-date: 2025-11-11
+title: Git 基础教程
+date: 2025-11-04
 categories:
   - 学学技术
 tags:

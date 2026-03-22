@@ -1,5 +1,5 @@
 ---
-title: Webpack 核心概念解析
+title: Webpack 基础教程
 date: 2026-01-20
 categories:
   - 学学技术

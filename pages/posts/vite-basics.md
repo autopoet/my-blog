@@ -1,5 +1,5 @@
 ---
-title: Vite 相关构建教学
+title: Vite 基础教程
 date: 2026-01-10
 categories:
   - 学学技术
