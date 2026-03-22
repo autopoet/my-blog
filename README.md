@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./public/logo.png" width="120" height="120" alt="autopoet blog logo" />
+  <img src="./public/logo.png" width="120" height="120" alt="autopoet blog logo" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </p>
 
-<h1 align="center">基于Valaxy 构建的个人博客</h1>
+<h1 align="center">基于 Valaxy 构建的个人博客</h1>
 
 <p align="center">
   <strong>我的前端学习与成长记录</strong>
@@ -15,11 +15,11 @@
   <a href="https://valaxy.site/">
     <img src="https://img.shields.io/badge/Valaxy-SSG-6200ee?style=flat-square&logo=visualstudiocode" alt="Valaxy" />
   </a>
-  <a href="https://decapcms.org/">
-    <img src="https://img.shields.io/badge/CMS-Decap-ff7e00?style=flat-square&logo=netlifycms" alt="CMS" />
+  <a href="https://upstash.com/">
+    <img src="https://img.shields.io/badge/Redis-Upstash-ff0000?style=flat-square&logo=redis" alt="Upstash Redis" />
   </a>
   <a href="https://vercel.com/">
-    <img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=flat-square&logo=vercel" alt="Vercel" />
+    <img src="https://img.shields.io/badge/Vercel-Serverless-000000?style=flat-square&logo=vercel" alt="Vercel" />
   </a>
 </p>
 
@@ -44,41 +44,44 @@
 
 ## 我做了哪些改进？
 
-为了让博客更符合我的使用习惯和学习需求，我在原版的基础上进行了以下改进：
+为了让博客更符合我的使用习惯和学习需求，我重点围绕着**前端首屏优化**与**后端全栈交互**进行了以下功能的改造与设计：
 
-### 1. 引入 Headless CMS (Decap CMS)
+### 1. 构建基于 Serverless 的轻量级全栈交互引擎
 
-- **改进原因**：传统的静态博客需要通过 Git 提交 Markdown 文件，在手机或没有开发环境的情况下很难发布内容。
-- **改进意义**：我集成了 Decap CMS，通过配置 YAML 模型实现了**可视化内容管理**。现在我即使不在电脑前，也能通过浏览器发布和修改博文。
+- **改进原因**：传统静态站点无法记录访客的浏览量与交互留言，缺乏社区生命力。
+- **实现方案**：独立开发基于 Node.js Vercel 边缘函数的跨端微服务。利用 Upstash Redis 的 `INCR` 和 `LPUSH` 等**原子操作**有效解决高并发下的数据竞争与脏读问题。
+- **前端深度集成**：在自研的 Vue 评论组件中主导了表单状态防抖；基于**乐观更新（Optimistic UI）**策略完成视图的瞬间更新，极大地提升了用户感知的动态发布体验；同时，通过 Vue 模板层面的严格转义严密拦截了**跨站脚本（XSS）注入攻击**，实现了一套极简但高标准的闭环全栈功能。
 
-### 2. 自研 Serverless 认证中转服务
+### 2. 基于底层原生 API 的首屏渲染调优 (v-lazy)
 
-- **改进原因**：Decap CMS 在使用 GitHub OAuth 时，由于其是纯前端应用，无法安全地处理 Client Secret。
-- **改进意义**：我基于 **Vercel Serverless Functions**（位于 `/api` 目录）手写了一个简单的认证后端。这不仅解决了登录安全性问题，也让我对 OAuth 2.0 授权流程 and 后端开发有了初步的实战经验。
+- **改进原因**：作为个人知识库，多媒体与代码截图经常拖慢首屏加载，抢占核心资源（js/css）的网络带宽。
+- **实现方案**：摒弃传统但昂贵的 `window.addEventListener('scroll')` 等原生监听位置的写法，自研并全站接入 Vue 懒加载自定义指令 `v-lazy`。
+- **性能红利**：深度运用浏览器底层的异步 `IntersectionObserver` API 进行跨区交叉监测。不仅大幅降低了运行时的内存开销，还彻底根除了因频繁获取 `offsetTop` 尺寸信息引发的浏览器**强迫同步布局（频繁重排）**底层隐患，让整个长列表和多图文章的滚动始终如丝般顺滑。
 
-### 3. 构建结构化“八股文”知识库
+### 3. 构建结构化“八股文”面试知识库
 
-- **改进原因**：作为学生，面试准备是重中之重，我需要一个专门的地方来整理前端面试题。
-- **改进意义**：我利用 Valaxy 的导航和侧边栏系统，专门开辟了**结构化面试题库**模块，涵盖核心原理、手写代码、高频算法等，方便在手机上随时“刷题”和回顾。
+- **改进原因**：作为学生，沉淀并内化面试考点是核心诉求。
+- **实现方案**：深入梳理了包括但不限于 Vue 响应式原理、计算机网络、JS 底层执行机制与高频手写题的核心脉络，利用自动化路由体系随时提供极速且系统化的沉浸式复习体验。
 
 ## 技术栈
 
 - **前端框架**: Vue 3.x (Composition API)
 - **静态生成**: Valaxy (Vite-based SSG)
-- **样式方案**: UnoCSS + valaxy-theme-yun
-- **内容管理**: Decap CMS
-- **后端支持**: Vercel Serverless Functions (Node.js)
+- **自定义指令系统**: 原生 TypeScript + Vue Directives
+- **后端支持**: Vercel Serverless Functions
+- **高性能云数据库**: Upstash Redis
+- **样式方案**: UnoCSS (原子化 CSS)
 - **部署自动化**: GitHub Actions + Vercel
 
 ## 快速开始
 
-如果你也想基于此版本搭建自己的博客：
+如果你也想基于此架构搭建自己的博客：
 
 ```bash
-# 1. 克隆
+# 1. 克隆项目
 git clone https://github.com/autopoet/my-blog.git
 
-# 2. 安装
+# 2. 安装依赖 (推荐使用 pnpm)
 pnpm install
 
 # 3. 运行预览
@@ -90,8 +93,8 @@ pnpm run build
 
 ---
 
-> **致谢**：特别感谢 [YunYouJun](https://github.com/YunYouJun) 提供的优秀开源框架 Valaxy。
+> **致谢**：特别感谢 [YunYouJun](https://github.com/YunYouJun) 提供的极其优秀的开源框架 Valaxy。没有巨人的肩膀，就没有现在的视野。
 
 <p align="center">
-  期待与每一个优秀的你在代码的世界相遇。
+  期待与你在开源与代码的世界相遇。
 </p>
