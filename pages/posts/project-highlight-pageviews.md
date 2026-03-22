@@ -1,6 +1,6 @@
 ---
 title: my-blog：全栈浏览量统计
-date: 2026-03-22
+date: 2026-03-05
 categories:
   - 聊聊项目
 tags:
@@ -10,8 +10,6 @@ tags:
 ---
 
 <ArticleViews slug="project-highlight-pageviews" />
-
-# 博客项目亮点：全栈浏览量统计（面试深度解析版）
 
 ## 1. 简历上的项目亮点描述（建议1-2句话）
 
