@@ -1,6 +1,6 @@
 ---
 title: JS 基础：原型与原型链
-date: 2025-11-17
+date: 2025-10-31
 categories:
   - 啃啃原理
 tags:

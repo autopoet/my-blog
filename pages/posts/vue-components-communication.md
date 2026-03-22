@@ -1,6 +1,6 @@
 ---
 title: Vue 组件与通信
-date: 2025-12-10
+date: 2025-12-06
 categories:
   - 啃啃原理
 tags:

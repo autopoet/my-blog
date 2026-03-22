@@ -1,6 +1,6 @@
 ---
 title: Vue 2 和 Vue 3 的区别
-date: 2025-12-02
+date: 2025-11-29
 categories:
   - 啃啃原理
 tags:
