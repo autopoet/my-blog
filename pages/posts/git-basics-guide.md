@@ -11,6 +11,7 @@ tags:
 
 > Git 是现代软件开发中不可或缺的版本控制工具。本文将带你从零开始掌握其核心命令。
 
+
 ## 1. 核心流程图
 
 ```mermaid
@@ -26,12 +27,14 @@ graph LR
 ## 2. 常用基础命令
 
 ### **配置用户信息**
+
 ```bash
 git config --global user.name "你的名字"
 git config --global user.email "your_email@example.com"
 ```
 
 ### **基础三部曲**
+
 1. **添加暂存**：`git add .` (添加所有改动)
 2. **提交记录**：`git commit -m "提交说明"`
 3. **推送到远程**：`git push origin main`
@@ -52,6 +55,7 @@ git config --global user.email "your_email@example.com"
 ---
 
 ## 4. 冲突解决技巧
+
 当两个人修改了同一行代码时，Git 会报错。
 1. 打开有冲突的文件，找到 `<<<<<<<`、`=======` 和 `>>>>>>>` 标记。
 2. 手动保留需要的代码。
@@ -60,4 +64,5 @@ git config --global user.email "your_email@example.com"
 ---
 
 ## 5. 总结
+
 Git 的学习曲线虽然初看陡峭，但掌握了以上基础后，你已经能应付 90% 的开发场景。多练习，多看 `git status`。
