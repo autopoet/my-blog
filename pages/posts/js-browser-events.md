@@ -8,6 +8,7 @@ tags:
   - 浏览器
   - 事件流
 ---
+<ArticleViews slug="js-browser-events" />
 
 > 浏览器的事件体系是前端交互的核心。理解事件流的三个阶段和事件委托的原理，是编写高性能代码的基础。
 
@@ -83,51 +84,3 @@ btn.addEventListener('click', showMessage2, false);
 btn.removeEventListener('click', showMessage1, false);
 ```
 
----
-
-## 2. 事件委托 (Event Delegation)
-
-### **原理**
-
-事件委托是利用**事件冒泡**机制，将子元素的事件监听器绑定到其父元素（或更高层级）上。当子元素被点击时，事件会冒泡到父元素，由父元素的监听器通过检查 `event.target` 来处理。
-
-### **性能优势**
-
-1. **减少内存消耗**：不需要为成百上千个子元素分别绑定监听器，只需绑定一个到父元素。
-2. **动态绑定**：对于新增的子元素，无需重新绑定事件，父元素的监听器依然有效。
-3. **减少 DOM 操作**：降低了修改 DOM 树时带来的性能开销。
-
-### **应用场景**
-
-最经典的场景是列表（`<ul>`）下的列表项（`<li>`）点击处理。
-
-
-```javascript
-const list = document.querySelector('#myList');
-
-list.addEventListener('click', function(e) {
-  // 检查点击的是否是 li 标签
-  if (e.target && e.target.nodeName === 'LI') {
-    console.log('List item clicked:', e.target.innerText);
-  }
-});
-```
-### 解释
-**事件冒泡过程中上传到父节点**，父节点通过事件对象获取到目标节点，把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理子元素的事件。
-比如100个li，每个都有click，如果使用for遍历 添加事件，关系页面整体性能，需要不断交互 访问dom次数过多，引起重排，延长交互时间。
-事件委托的话，将操作放进JS，只需要和dom交互一次，提高性能，还节约内存。
-**第三个参数(useCapture)为true在捕获过程执行，反之在冒泡过程执行。**
-
----
-
-## 3. 事件对象常用 API
-
-在处理事件时，`event` 对象提供了几个关键控制方法：
-
-- **e.target**：真正触发事件的元素（在委托中很有用）。
-- **e.currentTarget**：绑定监听器的元素（始终是父级或本身）。
-- **e.stopPropagation()**：阻止事件继续向上冒泡。
-- **e.stopImmediatePropagation()**：阻止冒泡，并阻止该元素上绑定的其他后续监听器执行。
-- **e.preventDefault()**：阻止默认行为（如 A 标签跳转、表单提交）。
-
-> **总结**：熟练掌握事件流能帮你处理复杂的 UI 交互嵌套，而善用事件委托则是优化长列表性能的不二法门。

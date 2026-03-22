@@ -8,6 +8,7 @@ tags:
   - 核心
   - 面试
 ---
+<ArticleViews slug="vue-theory-high-frequency-questions" />
 
 # Vue 原理类高频面试题
 

@@ -6,6 +6,7 @@ categories:
 tags:
   - 标签用例
 ---
+<ArticleViews slug="template" />
 
 > 这是一个写作模板。你可以直接复制这个文件的内容来创建新文章。
 > 记得修改 `categories` 里的分类，这样导航栏才能正确过滤出你的文章。
