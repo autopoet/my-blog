@@ -11,86 +11,123 @@ tags:
 
 <ArticleViews slug="project-highlight-lazyload" />
 
-## 1. 简历描述（亮点总结建议1-2句）
+## 一、 为什么要做图片懒加载？
 
-> **核心亮点：手写自定义指令 `v-lazy` 实现基于 IntersectionObserver 的图片懒加载优化**
-> *   **背景**：针对博客中多图文章导致的首屏网络阻塞问题，摒弃了传统的监听 scroll 事件方案。
-> *   **成果**：有效减少了首屏 60%+ 的无效资源加载，避免了获取 DOM 尺寸引起的浏览器强迫同步布局，显著降低了长列表页面的内存占用。
+### 1. 核心动机：解决首屏资源抢占
+
+- **痛点场景**：如果一篇文章包含 20 张高清大图，用户初次进入页面时，浏览器会瞬间并发 20 个图片请求。这些高带宽的网络请求会严重挤占关键 CSS 和 JS 的下载通道，导致首屏白屏时间显著延长。
+- **思考路径**：作为博主，我发现很多读者习惯快速浏览，甚至只看篇首就滑走。如果在页面初始化时就全量加载，不仅是对流量的极大浪费，更会拖慢用户的整体首屏体验。
+
+### 2. 技术选型：IntersectionObserver vs 传统 Scroll
+
+- **传统做法**：通过监听 `window.scroll` 事件，在主线程同步调用 `getBoundingClientRect().top` 或 `offsetTop` 来手动计算元素位置。
+- **底层隐患**：`scroll` 事件触发频率极高。由于计算位置的属性是同步 API，读取它们会强制浏览器为了数据准确性而立刻重排（Reflow），这种**强迫同步布局（Forced Synchronous Layout）**是导致长列表滚动掉帧的主要元凶。
+- **我的选择**：拥抱现代浏览器内置的 `IntersectionObserver`。它采用**异步监听机制**，将交叉检测的时机交由浏览器底层渲染引擎调度。它只在元素“进出”视口时发送通知，不占用 JS 主线程资源，性能开销几乎可以忽略不计。
+
+### 3. 本方案的优势与不足
+
+- **优势**：
+  - **按需加载**：实现真正意义上的“即看即得”，有效缩减了首屏 60% 以上的无效请求。
+  - **极致流畅**：从渲染流水线底层规避了不必要的重构，即使在低端移动设备上也能保持丝滑的滚动体验。
+- **不足与改进方向**：
+  - **预感性加载缺失**：仅在“看到”时才加载，会导致用户滑得过快时看到瞬时白屏。**改进**：可通过配置 `rootMargin`（例如设为 `200px`）实现图片的提前静默预加载。
+  - **观察器实例开销**：当前指令为每个图片元素都 `new` 了一个实例。**改进**：在面对极长列表时，可考虑采用**单例模式**（全局共用一个 Observer 实例），进一步压缩内存占用。
 
 ---
 
-## 2. 功能背景：为什么做？有什么区别？
+## 二、 核心代码逐行解析
 
-*   **痛点**：如果一篇文章有 20 张高清图，用户刚打开时，浏览器会同时发起 20 个请求。这不仅耗带宽，还会抢占正在加载的 CSS 和 JS 的带宽，导致页面白屏时间长。
-*   **传统做法 vs 你的做法**：
-    *   **传统做法**：监听 `window.scroll` 事件，触发时计算 `offsetTop`。
-    *   **缺点**：滚动一秒钟触发几十次，而且 `offsetTop` 等属性会强制浏览器重新渲染页面（回流），极其卡顿。
-    *   **你的做法**：使用 `IntersectionObserver`。
-    *   **优点**：这是浏览器原生的“交叉观察器”，它只在元素进入视口的一瞬间才异步通知你。它更聪明、更省电、完全不卡顿。
-
----
-
-## 3. 核心代码逐行解析 (`components/directives/lazy.ts`)
-
-为了面试能讲清楚，我们需要对每一行代码负责：
+### 1. 核心指令源码 (`components/directives/lazy.ts`)
 
 ```typescript
 import type { Directive } from 'vue'
 
-// 【逻辑】定义一个 Vue 指令对象。Directive<根元素类型, 传入的值类型>。
+// 定义指令：绑定目标为 HTMLImageElement，传入值为 string (图片URL)
 export const lazyDirective: Directive<HTMLImageElement, string> = {
-  // 【逻辑】mounted 代表 <img> 标签被插进页面的一瞬间执行。
+
+  // 【生命周期】mounted：DOM 元素被插入页面时触发
   mounted(el, binding) {
-    // 1. 【逻辑】先占坑。
-    // 在真实图下载好之前，给一张极小的透明图，保证页面不留白，也不报错。
+    // 1. 预设占位图 (防白屏、防碎图图标、减小重排)
+    // 使用 1x1 极小透明 Base64 GIF 占坑，不触发额外网络请求
     el.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
-    // 2. 【逻辑】创建“保安”（观察器）。
-    // 【考点】它接收一个回调函数，当图片和视口“交叉”时执行。
+    // 2. 实例化交叉观察器 (单体监听模式)
+    // 传入异步回调函数，将执行时机的控制权交接给浏览器底层
     const observer = new IntersectionObserver((entries) => {
-      // entries 是一个监控列表，因为可能一个保安盯着好几个元素。
+
+      // entries 为浏览器收集的状态变化目标数组
       entries.forEach(entry => {
-        // 【核心】判断是否进入了视口范围。
+
+        // 【核心拦截】只有当元素真正进入可视区域时才执行加载
         if (entry.isIntersecting) {
-          // 【逻辑】既然用户看到了，那就把 v-lazy="xxx" 里的 xxx 真实地址给 src。
-          // 此时浏览器才会真正发起这个图片地址的网络下载请求。
+
+          // 替换真实 src，触发浏览器内核的 HTTP 图片请求
           el.src = binding.value;
 
-          // 【逻辑】防御性编程：如果下载失败，给个保底图。
+          // 【防御性编程】处理图片加载失败的边界情况
           el.onerror = () => {
-            el.src = 'https://via.placeholder.com/...';
+            el.src = 'https://via.placeholder.com/150'; // 兜底图
           };
 
-          // 【逻辑】大功告成，辞退保安。
-          // 既然加载过了，就不需要再观察这张图了，节省内存空间。
+          // 【性能优化】加载完成后立刻解除对该 DOM 的监听
           observer.unobserve(el);
         }
       });
     });
 
-    // 3. 【逻辑】告诉保安去盯着这个具体的图片标签。
+    // 3. 启动监听：将当前 img 元素加入观察队列
     observer.observe(el);
 
-    // 【考点】为什么存到 el 上？
-    // 为了将来在 unmounted 钩子（组件销毁时）能拿到同一个保安去清理掉。
+    // 4. 跨生命周期状态挂载 (核心工程技巧)
+    // 将 observer 实例强制挂载到真实 DOM 节点 el 上。
+    // 使用 (el as any) 绕过 TS 的 HTMLImageElement 类型校验。
+    // 目的：为 unmounted 阶段的内存清理提供实例引用。
     (el as any)._observer = observer;
   },
 
-  // 【逻辑】当页面跳转、文章销毁时执行。
+  // 【生命周期】unmounted：组件/元素被销毁时触发
   unmounted(el) {
-    // 【深度考点】手动 disconnect 观察器。
-    // 如果不手动断开，这种全局监听可能会导致内存泄露，这是资深面试官必问的职场规范。
+    // 提取挂载的实例
     const observer = (el as any)._observer;
     if (observer) {
+      // 【防内存泄漏】彻底关停并销毁观察器
       observer.disconnect();
     }
   }
 };
 ```
 
+### 2. 全局注册机制 (`main.ts / setup`)
+
+```typescript
+import { defineAppSetup } from 'valaxy'
+import { lazyDirective } from '../components/directives/lazy'
+
+export default defineAppSetup((ctx) => {
+  const { app } = ctx
+
+  // 【全局注册】将 lazyDirective 注册为全局指令 'lazy'
+  // 模板编译原理：Vue 编译器遇到带 v- 前缀的属性 (v-lazy) 时，
+  // 会自动映射到此处注册的 'lazy' 指令逻辑。
+  app.directive('lazy', lazyDirective)
+})
+```
+
+### 3. 模板使用规范与解析
+
+```html
+<img v-lazy="'https://picsum.photos/1000/600?random=1'" />
+```
+
+- `v-lazy`: 触发自定义指令。
+
+- 双引号套单引号 (`"'...'"` ): Vue 模板内执行的是 JS 表达式。外层双引号代表表达式区域，内层单引号严格声明这是一个字符串字面量常量。如果不加单引号，Vue 会将其当作响应式变量去当前作用域（Data/Setup）中查找，导致 undefined 报错。
+
+- 参数映射: 解析后，外层的 `<img ...>` 真实 DOM 节点会被注入到钩子函数的 `el` 参数中；字符串 `'https://...'` 会被封装进 `binding.value` 中。
+
 ---
 
-## 4. 面试必问场景（模拟对答）
+## 三、 模拟面试问答
 
 ### 场景一：为什么要自定义指令，而不是直接写在组件里？
 **你的对答：**
