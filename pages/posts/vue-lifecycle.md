@@ -25,14 +25,14 @@ tags:
 
 | 阶段 | 钩子名称 | 状态描述 | 典型用途 |
 | :--- | :--- | :--- | :--- |
-| **创建 (Initialization)** | `beforeCreate` | 访问不到 `data`，尚未完成数据监测 | 几乎不使用 |
-| | `created` | **【常用】** 数据准备完毕，但尚未生成 HTML | 发起异步 Ajax 请求、初始化非响应式变量 |
-| **挂载 (Mounting)** | `beforeMount` | 虚拟 DOM 已生成，尚未插入真实网页 | 几乎不使用 |
-| | `mounted` | **【常用】** 真实 DOM 已挂载完成 | 操作 DOM、初始化 Echarts/Swiper、开启定时器 |
-| **更新 (Updating)** | `beforeUpdate` | 数据已变更，但页面尚未重绘 | 记录更新前的快照（如滚动位置） |
-| | `updated` | 页面重绘完成 | **禁止在此处修改数据**（会触发死循环） |
-| **销毁 (Unmounting)** | `beforeUnmount` | 实例准备销毁，仍可访问数据与 DOM | 善后工作（清理副作用） |
-| | `unmounted` | **【常用】** 实例彻底消失 | 清理定时器、解绑全局事件、关闭 WebSocket |
+| **创建 (Initialization)** | `setup()` *(替代 beforeCreate)* | 访问不到 `data`，尚未完成数据监测 | 几乎不使用 |
+| | `setup()` *(替代 created)* | **【常用】** 数据准备完毕，但尚未生成 HTML | 发起异步 Ajax 请求、初始化非响应式变量 |
+| **挂载 (Mounting)** | `onBeforeMount` | 虚拟 DOM 已生成，尚未插入真实网页 | 几乎不使用 |
+| | `onMounted` | **【常用】** 真实 DOM 已挂载完成 | 操作 DOM、初始化 Echarts/Swiper、开启定时器 |
+| **更新 (Updating)** | `onBeforeUpdate` | 数据已变更，但页面尚未重绘 | 记录更新前的快照（如滚动位置） |
+| | `onUpdated` | 页面重绘完成 | **禁止在此处修改数据**（会触发死循环） |
+| **销毁 (Unmounting)** | `onBeforeUnmount` | 实例准备销毁，仍可访问数据与 DOM | 善后工作（清理副作用） |
+| | `onUnmounted` | **【常用】** 实例彻底消失 | 清理定时器、解绑全局事件、关闭 WebSocket |
 
 ---
 
@@ -41,9 +41,9 @@ tags:
 ### Q1：关于请求发送时机的抉择
 > **面试官**： “你一般在哪个钩子发请求？为什么？”
 
-* **首选 `created`**：此时响应式数据已初始化，越早触发请求可以缩短白屏时间。
-* **必须选 `mounted` 的场景**：如果请求结果需要直接操作 DOM 元素（如：初始化图表、插件），必须等到 DOM 挂载完成后。
-* **SSR 考虑**：在服务端渲染时，`mounted` 钩子不会执行。为了兼容 SSR，通常根据业务逻辑在 `created` 或 `mounted` 之间权衡。
+* **首选 `setup()`**：此时响应式数据已初始化，越早触发请求可以缩短白屏时间。
+* **必须选 `onMounted` 的场景**：如果请求结果需要直接操作 DOM 元素（如：初始化图表、插件），必须等到 DOM 挂载完成后。
+* **SSR 考虑**：在服务端渲染时，`onMounted` 钩子不会执行。为了兼容 SSR，通常根据业务逻辑在 `setup()` 或 `onMounted` 之间权衡。
 
 ### Q2：销毁阶段的“副作用清理”
 > **面试官**： “组件销毁时，你通常会做哪些清理工作？不清理会怎样？”
@@ -70,16 +70,14 @@ tags:
 
 ```mermaid
 graph TD
-    A[父: beforeCreate] --> B[父: created]
-    B --> C[父: beforeMount]
-    C --> D[子: beforeCreate]
-    D --> E[子: created]
-    E --> F[子: beforeMount]
-    F --> G[子: mounted]
-    G --> H[父: mounted]
+    A[父: setup] --> B[父: onBeforeMount]
+    B --> C[子: setup]
+    C --> D[子: onBeforeMount]
+    D --> E[子: onMounted]
+    E --> F[父: onMounted]
 ```
 
 *   **加载过程口诀**：父先创，子后创；子先挂，父后挂。
-*   **销毁过程顺序**：`父 beforeUnmount` -> `子 beforeUnmount` -> `子 unmounted` -> `父 unmounted`。
+*   **销毁过程顺序**：`父 onBeforeUnmount` -> `子 onBeforeUnmount` -> `子 onUnmounted` -> `父 onUnmounted`。
 
 <ArticleComments slug="vue-lifecycle" />
