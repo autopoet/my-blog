@@ -7,6 +7,8 @@ tags:
   - Vue
   - 响应式原理
 ---
+<ArticleViews slug="vue-reactivity-new" />
+
 
 ## 1. 什么是响应式系统？
 
@@ -136,3 +138,5 @@ Vue 3 响应式的闭环由：**代理 (Proxy)**、**追踪 (Track)**、**触发
 ### Q4：在 v-for 循环中，为什么不建议使用 index 作为 key？
 
 **回答要点**：当列表执行删除、反转或在中间插入操作时，`index` 会发生漂移。由于 key 变了，Vue 的 Diff 算法会认为它是新节点而重新创建真实 DOM（并丢失输入框等组件状态），这不仅破坏了状态稳定，还极大地损耗了渲染性能。建议始终使用数据的 **唯一 ID**。
+
+<ArticleComments slug="vue-reactivity-new" />

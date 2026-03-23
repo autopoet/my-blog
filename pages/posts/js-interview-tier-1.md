@@ -8,6 +8,8 @@ tags:
   - 面试
   - 极高频
 ---
+<ArticleViews slug="js-interview-tier-1" />
+
 
 ## 1. 什么是 JavaScript 事件循环 (Event Loop)？宏任务和微任务执行顺序是怎样的？
 
@@ -102,3 +104,5 @@ JS 运行时主要包含：
 2. **arguments**：箭头函数没有 arguments 对象，可用 `...rest` 代替。
 3. **构造函数**：箭头函数不能作为构造函数（不能 `new`），没有 `prototype`。
 4. **绑定丢失**：普通函数的 this 是调用时确定的，箭头函数的 this 是定义时确定的。
+
+<ArticleComments slug="js-interview-tier-1" />

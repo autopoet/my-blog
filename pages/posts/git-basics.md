@@ -8,6 +8,8 @@ tags:
   - 版本控制
   - 基础
 ---
+<ArticleViews slug="git-basics" />
+
 
 > Git 是现代软件开发中不可或缺的版本控制工具。本文将带你从零开始掌握其核心命令。
 
@@ -66,3 +68,5 @@ git config --global user.email "your_email@example.com"
 ## 5. 总结
 
 Git 的学习曲线虽然初看陡峭，但掌握了以上基础后，你已经能应付 90% 的开发场景。多练习，多看 `git status`。
+
+<ArticleComments slug="git-basics" />

@@ -8,6 +8,8 @@ tags:
   - 核心
   - 面试
 ---
+<ArticleViews slug="vue-theory-high-frequency-questions" />
+
 
 # Vue 原理类高频面试题
 
@@ -99,3 +101,5 @@ tags:
 - **对比 Mixins**：
   - **Mixins 缺点**：数据来源不透明（不知道变量从哪个 Mixin 来的）、容易发生命名冲突、无法感知 Mixin 内部逻辑、类型推导困难。
   - **Hooks 优点**：变量来源明确（观察返回值解构）、不存在命名冲突（可以按需重命名）、更好的代码组织（按功能聚合代码）、完美支持 TypeScript 类型推导。
+
+<ArticleComments slug="vue-theory-high-frequency-questions" />

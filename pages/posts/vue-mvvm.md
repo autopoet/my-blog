@@ -7,6 +7,8 @@ tags:
   - Vue
   - 架构设计
 ---
+<ArticleViews slug="vue-mvvm" />
+
 
 > MVVM 是 Vue 等现代前端框架的灵魂。理解其核心思想，是从指令驱动进化到数据驱动开发模式的第一步。
 
@@ -113,3 +115,4 @@ graph LR
 5. **虚拟 DOM 对比 (Diff)**：执行更新时，通过 Diff 算法计算出最小变更代价。
 6. **真实 DOM 应用**：将最终计算出的差异应用到真实网页元素上。
 
+<ArticleComments slug="vue-mvvm" />

@@ -7,6 +7,8 @@ tags:
   - Vue
   - 面试
 ---
+<ArticleViews slug="vue-reactivity-keywords" />
+
 
 > 掌握响应式系统中的核心关键词（如 Proxy, track, trigger 等），不仅能加深对 Vue 运行机制的理解，更是应对大厂面试的必备利器。
 
@@ -133,3 +135,5 @@ graph TD
     D -- 重新读数据 --> E(触发 Track)
     E -- 建立关联 --> B
 ```
+
+<ArticleComments slug="vue-reactivity-keywords" />

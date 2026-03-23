@@ -8,6 +8,8 @@ tags:
   - 脚手架
   - 前端工具
 ---
+<ArticleViews slug="vue-setup" />
+
 
 > 开启 Vue 开发之旅的第一步是环境搭建。本文将介绍从 CDN 引入到现代脚手架工具的多种安装方式，并告诉你开发者的主流选择。
 
@@ -84,3 +86,5 @@ const message = ref('你好，Vue！')
 
 > [!TIP]
 > 如果你是刚开始学习，建议先在 CodeSandbox 等在线环境玩一下，然后直接上 **Vite** 的本地开发环境。
+
+<ArticleComments slug="vue-setup" />

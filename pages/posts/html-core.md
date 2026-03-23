@@ -7,6 +7,8 @@ tags:
   - HTML
   - 基础
 ---
+<ArticleViews slug="html-core" />
+
 
 > HTML (HyperText Markup Language) 是构建 Web 页面的基础。理解其核心概念，如语义化、DOM 结构及常见元素，是每个前端开发者的基本功。
 
@@ -48,3 +50,5 @@ tags:
 - `async`：异步下载，下载完成后立即执行，可能阻塞 HTML 解析。
 
 > **总结**：HTML 不仅仅是标签的堆砌，合理的结构和语义化是高质量 Web 应用的基石。
+
+<ArticleComments slug="html-core" />

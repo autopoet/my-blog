@@ -9,6 +9,8 @@ tags:
   - 安全 (SSL)
   - Vercel
 ---
+<ArticleViews slug="domain-config" />
+
 
 > 当你的博客成功部署在 Vercel 或 GitHub Pages 后，下一步通常是购买一个专属域名。这不仅是程序员的浪漫，更是建立个人品牌的基石。
 
@@ -62,3 +64,5 @@ DNS 像是一个大账本，把域名对应到服务器 IP。
 
 > [!TIP]
 > 推荐使用 **Cloudflare** 作为 DNS 管理器。它不仅解析快，还提供免费的 Web 防火墙和无限解析记录。
+
+<ArticleComments slug="domain-config" />

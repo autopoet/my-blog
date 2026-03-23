@@ -7,6 +7,8 @@ tags:
   - Vue
   - 生命周期
 ---
+<ArticleViews slug="vue-lifecycle" />
+
 
 > **一句话定义**：生命周期钩子（Lifecycle Hooks）就是 Vue 实例从“出生”到“死亡”过程中，在特定时刻自动触发的一系列 **“回调函数”**。你可以理解为机器人出厂流程中的各个质检点。
 
@@ -80,4 +82,4 @@ graph TD
 *   **加载过程口诀**：父先创，子后创；子先挂，父后挂。
 *   **销毁过程顺序**：`父 beforeUnmount` -> `子 beforeUnmount` -> `子 unmounted` -> `父 unmounted`。
 
-
+<ArticleComments slug="vue-lifecycle" />

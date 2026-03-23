@@ -6,6 +6,8 @@ categories:
 tags:
   - Markdown
 ---
+<ArticleViews slug="markdown-guide" />
+
 
 # Markdown 零基础教学与博文规范
 
@@ -101,3 +103,5 @@ tags:
 ---
 
 希望这篇指南能帮你快速上手博客写作！如果有任何疑问，随时问我。
+
+<ArticleComments slug="markdown-guide" />

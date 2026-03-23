@@ -8,6 +8,8 @@ tags:
   - 构建工具
 
 ---
+<ArticleViews slug="frontend-engineering-questions" />
+
 
 > 前端工程化是通过工具和流程解决大型项目的开发效率、代码质量和部署稳定性问题。
 
@@ -144,3 +146,5 @@ Webpack 5 的革命性特性：
 1. **规范化**：模块化、Git 工作流、Commit 规范、代码规范 (ESLint/Prettier)。
 2. **自动化**：CI/CD、自动化构建、自动部署。
 3. **性能化**：构建速度优化、运行首屏优化 (SSR/FCP/Tree-shaking)。
+
+<ArticleComments slug="frontend-engineering-questions" />

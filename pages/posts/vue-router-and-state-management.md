@@ -8,6 +8,8 @@ tags:
   - Vue Router
   - Pinia
 ---
+<ArticleViews slug="vue-router-and-state-management" />
+
 
 ## 1. Vue Router 的导航守卫有哪些？分别用于什么场景
 
@@ -34,3 +36,5 @@ Pinia 和 Vuex 都是 Vue 的集中式状态管理方案，其核心目的是在
 
 ### 面试话术
 在复杂应用中，状态往往会被多个组件依赖，集中式状态管理可以统一管理这些全局状态，减少组件耦合，提升可维护性。Pinia 相比 Vuex 设计更轻量，使用组合式 API，更符合 Vue3 的开发习惯。
+
+<ArticleComments slug="vue-router-and-state-management" />

@@ -8,6 +8,8 @@ tags:
   - 面试
   - 高频
 ---
+<ArticleViews slug="js-interview-tier-2" />
+
 
 ## 1. JavaScript 为什么是单线程？如何实现异步编程？
 
@@ -102,3 +104,5 @@ tags:
 
 - **栈 (Stack)**：存储基本数据类型的值和引用类型的**地址**。空间小、读取快、自动管理。
 - **堆 (Heap)**：存储引用类型的**实际内容**（如对象、数组）。空间大、读取相对慢、由 GC 管理回收。
+
+<ArticleComments slug="js-interview-tier-2" />

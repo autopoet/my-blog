@@ -7,6 +7,8 @@ tags:
   - Vue
   - 组件通信
 ---
+<ArticleViews slug="vue-components-communication" />
+
 
 > **核心摘要：** 本文深入探讨 Vue 组件间通信的多样化方式、动态与异步组件的应用，以及插槽（Slots）的各类场景，助力开发者构建高可维护性的 Vue 应用。
 
@@ -115,3 +117,5 @@ const AsyncComp = defineAsyncComponent(() =>
 * **示例场景**：封装一个列表组件，子组件处理分页循环，父组件决定每一行展示图片还是文字。
 
 ---
+
+<ArticleComments slug="vue-components-communication" />

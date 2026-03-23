@@ -8,6 +8,8 @@ tags:
   - 网络请求
   - Axios
 ---
+<ArticleViews slug="js-async-requests" />
+
 
 > **一句话定义**：Ajax 是一种异步通信技术方案；XMLHttpRequest (XHR) 是其最早的浏览器实现；Fetch 是现代原生的 Promise 替代品；而 Axios 是目前最流行的同构请求库。
 
@@ -92,3 +94,4 @@ Ajax 跨域默认不携带身份凭证。
 1. **前端**：需设置 `withCredentials: true`。
 2. **后端**：CORS 策略中的 `Access-Control-Allow-Credentials` 必须设为 `true`，且 `Access-Control-Allow-Origin` 不能设为 `*`（必须是具体域名）。
 
+<ArticleComments slug="js-async-requests" />

@@ -8,6 +8,8 @@ tags:
   - ES6+
   - 进阶
 ---
+<ArticleViews slug="js-es6-plus" />
+
 
 > 从 ES6 开始，JavaScript 进入了高速迭代期。掌握这些现代语法特性，不仅能提升开发效率，还能让代码更加简洁优雅。
 
@@ -106,3 +108,5 @@ console.log(proxy.foo);     // 404 Not Found
 ![Axios与Proxy对比](/JS-Proxy.png)
 
 > **总结**：ES6+ 的语法不仅仅是“语法糖”，它们通过更严谨的语义（如 Proxy、Optional Chaining）极大提升了 JS 处理复杂业务逻辑的能力。
+
+<ArticleComments slug="js-es6-plus" />

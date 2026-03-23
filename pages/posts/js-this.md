@@ -8,6 +8,8 @@ tags:
   - 基础
   - this
 ---
+<ArticleViews slug="js-this" />
+
 
 > JavaScript 中的 `this` 是动态绑定的，它的值取决于函数的调用方式。
 
@@ -81,3 +83,5 @@ obj.sayName(); // 可能不是 "Dave"
 - call：传参是一个个传，fn.call(obj, arg1, arg2)。立即执行。
 - apply：传参是数组，fn.apply(obj, [args])。立即执行。
 - bind：传参和 call 一样，但它返回一个新函数，不会立即执行（常用于 Vue 或 React 的事件处理）。
+
+<ArticleComments slug="js-this" />

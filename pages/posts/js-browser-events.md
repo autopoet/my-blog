@@ -8,6 +8,8 @@ tags:
   - 浏览器
   - 事件流
 ---
+<ArticleViews slug="js-browser-events" />
+
 
 > 浏览器的事件体系是前端交互的核心。理解事件流的三个阶段和事件委托的原理，是编写高性能代码的基础。
 
@@ -131,3 +133,5 @@ list.addEventListener('click', function(e) {
 - **e.preventDefault()**：阻止默认行为（如 A 标签跳转、表单提交）。
 
 > **总结**：熟练掌握事件流能帮你处理复杂的 UI 交互嵌套，而善用事件委托则是优化长列表性能的不二法门。
+
+<ArticleComments slug="js-browser-events" />

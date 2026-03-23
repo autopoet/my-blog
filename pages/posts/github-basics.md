@@ -9,6 +9,8 @@ tags:
   - 协作
   - CI/CD
 ---
+<ArticleViews slug="github-basics" />
+
 
 > 当你掌握了本地 Git 操作后，GitHub 才是真正开启程序员“社交”与“高效生产”的大门。本文将深入解析如何利用 GitHub 进行高效协作。
 
@@ -54,3 +56,5 @@ tags:
 
 > [!TIP]
 > 善用项目的 **Star** 功能来关注好的库，但更重要的是利用 **Watch** 功能来追踪代码的更新细节。
+
+<ArticleComments slug="github-basics" />

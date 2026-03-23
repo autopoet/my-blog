@@ -8,6 +8,8 @@ tags:
   - 后端
   - JavaScript
 ---
+<ArticleViews slug="nodejs-basics" />
+
 
 > 运行在服务器端的 JavaScript。它不是新语言，而是新的运行时环境。
 
@@ -59,3 +61,5 @@ try {
 
 ## 4. 总结
 Node.js 极大地拓宽了前端开发者的技术栈，使其能够胜任全栈工程师。通过学习内置模块和 NPM 的海量资源，你可以快速构建高性能的后端服务。
+
+<ArticleComments slug="nodejs-basics" />

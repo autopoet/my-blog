@@ -8,6 +8,8 @@ tags:
   - 核心
   - 面试
 ---
+<ArticleViews slug="vue-practical-high-frequency-questions" />
+
 
 # Vue 实战类高频面试题
 
@@ -73,3 +75,5 @@ tags:
 
 **面试话术示例：**
 > 模板渲染流程可以总结为 `template → 编译 → render function → VNode → DOM`。在 setup 中返回的数据会建立响应式依赖，数据变化会驱动模板对应的 DOM 更新。
+
+<ArticleComments slug="vue-practical-high-frequency-questions" />

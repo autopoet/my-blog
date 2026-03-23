@@ -8,6 +8,8 @@ tags:
   - 基础
   - 闭包
 ---
+<ArticleViews slug="js-closure" />
+
 
 > 闭包是 JavaScript 中最强大的特性之一，也是面试中的“常客”。
 
@@ -84,3 +86,5 @@ for (var i = 1; i <= 5; i++) {
 
 ---
 > 过度使用闭包可能导致内存泄漏，因为闭包引用的变量不会被垃圾回收机制轻易回收。
+
+<ArticleComments slug="js-closure" />

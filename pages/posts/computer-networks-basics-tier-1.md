@@ -8,6 +8,8 @@ tags:
   - 基础
   - 极高频
 ---
+<ArticleViews slug="computer-networks-basics-tier-1" />
+
 
 ## 1. GET 和 POST 请求的区别
 
@@ -236,3 +238,5 @@ HTTP 2.0 不再追求文本可读性，转而追求机器传输效率。
 - **If-None-Match**：客户端在请求时携带 ETag，服务器判断是否存在差异，如果没有则返回 `304 Not Modified`。
 - **Last-Modified**：指定资源的最后修改时间。
 - **If-Modified-Since**：客户端在请求时携带 Last-Modified，服务器判断资源是否已被修改，如果未修改返回 `304`。
+
+<ArticleComments slug="computer-networks-basics-tier-1" />

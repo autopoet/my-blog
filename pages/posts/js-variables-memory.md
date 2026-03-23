@@ -9,6 +9,8 @@ tags:
   - 变量
   - 内存管理
 ---
+<ArticleViews slug="js-variables-memory" />
+
 
 > 本文涵盖了 JavaScript 基础中最重要的三个部分：变量声明的区别、数据类型与内存管理，以及数组常用方法的分类解析。
 
@@ -116,3 +118,5 @@ console.log(newArr); // [2, 4, 6, 8]
 ```
 
 > **总结**：理解变量的作用域有助于代码安全，掌握内存机制有助于性能优化，而熟练分类数组方法则是日常业务开发的基础。
+
+<ArticleComments slug="js-variables-memory" />

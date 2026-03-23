@@ -9,6 +9,8 @@ tags:
   - 构建工具
 
 ---
+<ArticleViews slug="frontend-engineering-high-frequency-questions" />
+
 
 ## 一、 错误捕获与白屏问题排查
 
@@ -166,3 +168,5 @@ Monorepo（单一仓库）是将多个项目模块集中在一个代码仓库中
 - 严格代码规范（**ESLint + Prettier**）
 - **Git Commit 规范**（如 conventional commits）
 - **单元测试**（Jest + RTL）+ **集成测试**
+
+<ArticleComments slug="frontend-engineering-high-frequency-questions" />

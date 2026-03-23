@@ -7,6 +7,8 @@ tags:
   - CSS
   - 基础
 ---
+<ArticleViews slug="css-core" />
+
 
 > CSS (Cascading Style Sheets) 赋予了网页灵魂。从盒模型到布局方案，再到现代的 Grid 和 CSS 变量，CSS 的深度远超想象。
 
@@ -61,3 +63,5 @@ tags:
 ---
 
 > **总结**：CSS 需要大量的实践。理解布局原理和层叠机制是进阶的关键。
+
+<ArticleComments slug="css-core" />

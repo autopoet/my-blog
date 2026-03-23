@@ -9,6 +9,8 @@ tags:
   - 原型
 
 ---
+<ArticleViews slug="js-prototype" />
+
 
 ## 1. 什么是原型 (Prototype)？
 
@@ -82,3 +84,5 @@ console.log(Object.prototype.__proto__); // null
 - **原型链终点**：`Object.prototype.__proto__ === null`。
 
 > 这是面试中最高频的问题之一，建议熟练背诵并能手画原型链图。
+
+<ArticleComments slug="js-prototype" />

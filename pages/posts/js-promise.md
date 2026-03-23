@@ -9,6 +9,8 @@ tags:
   - 异步
   - Promise
 ---
+<ArticleViews slug="js-promise" />
+
 
 > Promise 是异步编程的一种解决方案，比传统的回调函数更合理且更强大。它是一个构造函数，用于生成 Promise 实例。
 
@@ -167,3 +169,5 @@ console.log('4'); // 同步
 使用 async/await，你可以直接用 `try...catch` 捕获所有异步环节的错误。
 
 > **总结**：Promise 的出现规范了异步操作的标准化，通过链式调用解决了“回调地狱”问题。理解其状态机模型和在事件循环中的位置是掌握异步编程的关键。
+
+<ArticleComments slug="js-promise" />

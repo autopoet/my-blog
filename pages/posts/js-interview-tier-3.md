@@ -8,6 +8,8 @@ tags:
   - 面试
   - 中高频
 ---
+<ArticleViews slug="js-interview-tier-3" />
+
 
 ## 1. JavaScript 数组有哪些常用方法？
 
@@ -91,3 +93,5 @@ tags:
 
 - **defineProperty**：劫持具体属性；无法检测新增或删除属性；需要递归处理嵌套对象；性能较重。
 - **Proxy**：劫持整个对象；原生支持检测新增/删除、数组下标变化；支持 13 种拦截操作；通过惰性处理提升性能。
+
+<ArticleComments slug="js-interview-tier-3" />

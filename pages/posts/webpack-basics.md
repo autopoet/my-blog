@@ -8,6 +8,8 @@ tags:
   - 构建工具
   - 前端工程化
 ---
+<ArticleViews slug="webpack-basics" />
+
 
 > 现代前端工程化的基石。Webpack 本质上是一个静态资源打包工具。
 
@@ -80,3 +82,5 @@ module.exports = {
 
 ## 4. 总结
 虽然 Vite 很火，但 Webpack 至今仍是大多数大型复杂项目的首选，掌握它的核心设计思想能让你对前端构建流程有更深刻的认知。
+
+<ArticleComments slug="webpack-basics" />

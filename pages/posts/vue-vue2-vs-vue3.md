@@ -8,6 +8,8 @@ tags:
   - Vue2
   - Vue3
 ---
+<ArticleViews slug="vue-vue2-vs-vue3" />
+
 
 > **一句话定义**：Vue 3 是对 Vue 2 的一次彻底重构。它在保留声明式编程的基础上，通过 **Proxy 响应式** 和 **Composition API** 解决了复杂逻辑复用难、底层性能瓶颈等痛点。
 
@@ -62,3 +64,5 @@ tags:
 ### Q3：Tree-shaking 如何减少未使用代码？
 * Vue 2 的很多全局 API 是挂载在 Vue 原型上的，不管你用不用都会被打进包里。
 * Vue 3 改成了 **ES Modules (import/export)** 导出方式。编译器在打包时会分析依赖树，没被 `import` 的代码会被标记为“死代码”并剔除，从而显著减小首屏加载体积。
+
+<ArticleComments slug="vue-vue2-vs-vue3" />

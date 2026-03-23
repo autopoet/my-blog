@@ -7,6 +7,8 @@ tags:
   - Vue
   - 响应式原理
 ---
+<ArticleViews slug="vue-reactivity" />
+
 
 > 响应式系统是 Vue 的核心驱动。通过对底层 Proxy 拦截与依赖追踪机制的学习，我们能更高效地编写高性能的 Vue 应用。
 
@@ -135,3 +137,5 @@ effect(() => {
 > 4. 由于 **render 函数被自动包装在 effect 中**，所以它能自动感知数据变化，从而高效、精确地驱动视图更新。
 >
 > 相比 Vue 2，这种设计解决了无法监听属性增删、数组下标变化的痛点，并通过惰性代理和 WeakMap 的使用，大幅优化了内存和初始化性能。”
+
+<ArticleComments slug="vue-reactivity" />

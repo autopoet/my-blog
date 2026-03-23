@@ -8,6 +8,8 @@ tags:
   - 前端工具
   - 构建工具
 ---
+<ArticleViews slug="vite-basics" />
+
 
 > 为什么 Vite 这么快？因为它利用了浏览器原生的 ES 模块 (ESM)。
 
@@ -65,3 +67,5 @@ Vite 使用 **Rollup** 进行生产环境打包，确保输出代码极其精简
 
 ## 4. 总结
 Vite 不仅是一个构建工具，它代表了前端开发的未来。如果你还在使用传统的打包工具，强烈建议尝试 Vite。
+
+<ArticleComments slug="vite-basics" />

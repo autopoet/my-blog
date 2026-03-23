@@ -8,6 +8,8 @@ tags:
   - 手写
   - 面试
 ---
+<ArticleViews slug="css-hand-writing-questions" />
+
 
 # CSS 手写专题
 
@@ -369,3 +371,5 @@ tags:
   visibility: visible;
   opacity: 1;
 }
+
+<ArticleComments slug="css-hand-writing-questions" />
