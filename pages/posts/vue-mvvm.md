@@ -7,7 +7,6 @@ tags:
   - Vue
   - 架构设计
 ---
-<ArticleViews slug="vue-mvvm" />
 
 > MVVM 是 Vue 等现代前端框架的灵魂。理解其核心思想，是从指令驱动进化到数据驱动开发模式的第一步。
 
@@ -47,6 +46,70 @@ graph LR
 
 > **核心思想**：**View 和 Model 完全解耦。** ViewModel 负责监控 Model 数据的变化并通知 View 更新，同时也监听 View 的交互来修改 Model。
 
+---
 
+## 2. MVVM 的核心优势（为什么有它）
 
-<ArticleComments slug="vue-mvvm" />
+### ✅ 分离关注点，降低耦合
+- **View** 只管“怎么显示”，**ViewModel** 只管“逻辑处理”。
+- 修改 UI 布局不影响业务逻辑，方便并行开发。
+
+### ✅ 双向数据绑定（以 Vue 为例）
+
+```vue
+<input v-model="username" />
+<!-- 底层原理：
+  :value="username"
+  @input="username = $event.target.value"
+-->
+```
+
+- **View → Model**：用户输入时，自动更新变量数据。
+- **Model → View**：代码修改变量时，页面元素自动刷新。
+
+> **你的疑问**：*“Vue 是一个框架，那 Vue 组件是什么角色？”*
+> **答**：Vue 是实现 MVVM 的工具。**一个 `.vue` 组件就是一个 MVVM 的封装体**：`<template>` 是 View，`<script>` 是 ViewModel，而它处理的数据对象（如 `props`/`data`）就是 Model。
+
+---
+
+## 3. MVVM 在 Vue 中的体现
+
+| MVVM 层级 | Vue 中的对应实现 |
+| :--- | :--- |
+| **Model** | `props`、`data()`、`reactive` 数据对象、Pinia/Vuex 状态 |
+| **View** | `<template>` 中的 HTML 结构与指令 |
+| **ViewModel** | `setup()`、`methods`、`computed`、`watch` 等逻辑块 |
+
+> **结论**：Vue 组件 = 一个完整的 MVVM 现代实现单元。
+
+---
+
+## 4. 局限性
+
+- **性能开销**：对于海量数据流，ViewModel 维护的大量代理（Proxy/Watcher）会消耗额外的内存和 CPU。
+- **调试黑盒**：某些报错可能由于 Vue 内部更新队列引起，若不熟悉原理，难以辨别是 Model 逻辑错误还是 View 绑定异常。
+- **SEO 挑战**：纯客户端渲染的 MVVM 架构对爬虫不够友好（需配合 Nuxt.js 等 SSR 方案解决）。
+
+---
+
+## 面试真题：大厂高频考点
+
+### Q1：Vue 如何实现逻辑层与视图层的依赖收集？
+> **面试官**： “当数据变化时，Vue 怎么精确知道该更新哪个组件，而非全量刷新？”
+
+1. **响应式拦截 (Reactivity)**：在组件初始化阶段，Vue 使用 `Proxy` (Vue3) 对数据进行拦截。每个响应式属性都会关联一个依赖管理器 **Dep (Dependency)**。
+2. **触发读取 (Track)**：视图渲染时会读取数据（例如模板中的 `{{ name }}`），从而触发该属性的 **Getter**。
+3. **依赖注册 (Collect)**：在 Getter 中，将当前的 **Watcher**（执行更新的观察者）注册到该属性的 **Dep** 列表里。
+
+**【生动比喻】**：就像你点击了 B 站 UP 主（数据）的“关注”按钮（触发 Getter），你就进入了该 UP 主的粉丝名单（Dep）。
+
+### Q2：派发更新 (Trigger) 的完整流程是什么？
+> **面试官**： “当你执行 `state.name = 'new name'` 后，底层发生了什么？”
+
+1. **Setter 拦截**：数据变更触发属性的 **Setter** 方法。
+2. **通知管理器**：该属性关联的 **Dep** 接到变更信号，立即通知其下所有订阅者。
+3. **通知订阅者**：**Dep** 遍历列表，调用所有 **Watcher** 的 `update` 方法。
+4. **异步队列渲染 (NextTick)**：Vue 将更新任务推入微任务队列，避免频繁操作 DOM。
+5. **虚拟 DOM 对比 (Diff)**：执行更新时，通过 Diff 算法计算出最小变更代价。
+6. **真实 DOM 应用**：将最终计算出的差异应用到真实网页元素上。
+
