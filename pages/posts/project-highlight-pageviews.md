@@ -11,16 +11,54 @@ tags:
 
 <ArticleViews slug="project-highlight-pageviews" />
 
-## 1. 简历上的项目亮点描述
+## 一、 全局数据流转链路
 
-> **核心亮点：构建基于 Serverless 的全栈交互引擎（包含浏览量统计与动态评论）**
-> *   **项目介绍**：基于 **Vue 3** & Valaxy 开发的静态博客。引入轻量级 **Serverless** 架构与原生 API 渲染优化策略，打造全栈功能拓展与极致首屏体验。
-> *   **后端微服务交互**：独立开发基于边缘函数的微服务集合。利用 Upstash Redis的 `INCR` 与 `LPUSH` 等**原子操作**解决高并发下的**数据竞争与多重写入阻塞**脏读问题。
-> *   **前端深度状态流转**：结合 Vue `onMounted` 生命周期规避 **SSG 预编译环境**对真实请求的污染。在前端评论组件中主导了网络请求封装与表单状态防抖；更基于**乐观更新（Optimistic UI）**策略完成视图渲染，在通过 Vue 模板安全转义防范 **XSS 注入**的同时，极致提升了动态发布时的用户感知速度。
+当用户在前端页面点击一篇博客（例如：[浏览器原理深度解析](/posts/browser-principles-questions)）时，系统底层会经历一次完整的前后端数据交互。整个流转链路可以划分为以下四个核心阶段：
+
+```mermaid
+sequenceDiagram
+    participant U as 用户浏览器
+    participant V as Vue (前端组件)
+    participant S as Vercel Serverless (后端函数)
+    participant R as Upstash Redis (云端数据库)
+
+    U->>V: 访问博客页面，触发路由解析
+    V->>V: 挂载 <ArticleViews>，显示 "加载中..."
+    V->>S: 发起 Fetch 请求 GET /api/views?slug=xxx
+    S->>S: 提取并校验 slug，读取环境变量密钥
+    S->>R: 发送 INCR pageviews:xxx 鉴权请求
+    R-->>S: 原子操作完成，返回最新数值 (如 124)
+    S-->>V: 封装 HTTP 200 JSON 响应返回
+    V->>V: 更新响应式数据 (views.value = 124)
+    V-->>U: 触发 VDOM Diff，重绘真实 DOM 显示数字
+```
+
+### 阶段一：组件挂载与状态初始化
+
+* **路由解析与组件挂载**：用户点击链接后，Vue Router 接管路由并切换页面，解析并渲染 `<ArticleViews>` 浏览量统计组件。
+* **状态初始化**：组件实例创建，通过 `props` 接收文章唯一标识 `slug`。同时初始化内部的响应式状态：`views = null` 与 `isLoading = true`。
+* **占位渲染**：由于数据尚未请求回来，页面首先通过 `v-if` 条件渲染出“加载中...”的骨架占位文案，提升体验并避免页面结构突兀抖动。
+
+### 阶段二：前端发起异步同源请求
+
+* **DOM 就绪触发**：当页面真实 DOM 树渲染完毕，安全触发 Vue 的 `onMounted` 生命周期的挂载钩子。此举规避了 SSG 构建期的无用空请求，实现在真实客户端环境的时机保障。
+* **发起 Fetch 请求**：前端利用原生 `fetch` 向同源路径下的 Serverless 接口 `/api/views?slug=browser-principles-questions` 发起 GET 异步请求。因为是同站内资源，这通常可以直接规避初级的浏览器的跨域（CORS）限制。
+
+### 阶段三：Serverless 处理与 Redis 原子自增（核心链路）
+
+* **网关接收与防御性校验**：Vercel 的 Serverless 边缘网关接收到请求，解析 URL 参数 `slug`。首先进行**防御性校验**，拦截空值或恶意请求，避免造成数据库空指针计算异常。
+* **环境变量安全鉴权**：从服务端的 Node.js 内存 `process.env` 中安全读取 Redis 的 REST URL 与 Token 密钥。避免硬编码以防止源码泄漏引发数据被盗隐患。
+* **Redis 原子自增机制**：校验通过后，向 Upstash 云端 Redis 发送 `INCR` 自增指令。得益于 Redis 的**单进程单线程执行模型**，`INCR` 完美实现了原子操作——将“获取值、累加 1、存新值”封装为一个原子单元，从根源上杜绝了高并发访问下的**写入冲突**与数据脏读现象。
+
+### 阶段四：响应式驱动视图重绘
+
+* **网络响应与解包**：Redis 处理完毕并返回更新后的数值（如 `124`）给 Serverless。函数附加 HTTP `200` 状态码，包装为标准的 JSON 格式响应给前端。
+* **响应式数据劫持**：前端通过 `await response.json()` 提取出 `124`，执行赋值：`views.value = 124`。Vue 3 底层的 `Proxy` 代理机制敏锐地劫持到设值操作，并通知相关的依赖（Effect）。
+* **VDOM Diff 算法触发**：同步将 `isLoading` 置为 `false`，Vue 响应式系统通知渲染函数重新执行以生成新的 VDOM 树。此时触发 **VDOM Diff 算法**进行差异比对，将修改精准应用到真实 DOM 上，使得原先的占位文案平滑更新为用户实际的浏览量数字。
 
 ---
 
-## 2. 功能背景：为什么做？有什么好处？学到了什么？
+## 二、 功能背景：为什么做？有什么好处？学到了什么？
 
 *   **为什么要实现这个功能？**
     传统的纯静态博客没有后端服务器，无法记录用户的交互数据。为了让简历体现出“前后端数据交互”的全栈能力，并解决纯前端项目“没有真实后端数据支撑”的痛点，我们需要引入一个数据持久化方案。
@@ -34,11 +72,11 @@ tags:
 
 ---
 
-## 3. 核心代码逐行深度解析
+## 三、 核心代码解析
 
 以下是对代码的逐行拆解，你需要完全理解每行代码的意义，才能在被问到细节时不慌。
 
-### 3.1 前端：Vue 组件代码 (`components/ArticleViews.vue`)
+### 1. 前端：Vue 组件代码 (`components/ArticleViews.vue`)
 
 ```vue
 <script setup>
@@ -96,7 +134,7 @@ onMounted(async () => {
 </template>
 ```
 
-### 3.2 后端：Serverless 接口代码 (`api/views.js`)
+### 2. 后端：Serverless 接口代码 (`api/views.js`)
 
 ```javascript
 // 【逻辑】导出一个默认异步函数，Vercel 会自动将其识别并部署为后端的 API 接口。
@@ -148,11 +186,9 @@ export default async function handler(req, res) {
 
 ---
 
-## 4. 模拟面试：高频“八股”与对答策略
+## 四、 模拟面试深挖
 
-面试官如果对你的项目感兴趣，大概率会根据这里的技术点展开以下提问。
-
-### 场景一：深挖并发、Redis与数据竞争（最核心的含金量）
+### 场景一：深挖并发、Redis与数据竞争
 **面试官提问：** “这个功能其实就是加 1，如果你不用 Redis，自己用 Node fs 存一个普通 json 文件来记录行不行？为什么专门用 Redis？”
 
 **你的完美回答：**
