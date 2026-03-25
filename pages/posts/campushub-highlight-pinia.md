@@ -78,7 +78,7 @@ export default router
 
 ## 3. 核心面试 Q&A
 
-### 面问：刚刚你简历提到“SPA 下组件复用”，你能不能讲讲如果我不借助 Vue router 和 pinia reset，在 Vue 中有什么原生的方法能强制不复用组件吗？
+### 面问：你简历提到“SPA 下组件复用”，你能不能讲讲如果我不借助 Vue router 和 pinia reset，在 Vue 中有什么原生的方法能强制不复用组件吗？
 **你的回答：**
 “这是 Vue 虚拟 DOM 算法的默认优化策略（就地更新）。如果某些页面非常奇葩，我坚决要求在切换页面时必须让组件走完销毁和重建的生命周期，最直接的原生手段就是给 `<router-view>` 加一个绑定的唯一 `key` 属性。
 例如 `<router-view :key="$route.fullPath" />`。
