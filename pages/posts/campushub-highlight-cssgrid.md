@@ -11,10 +11,6 @@ tags:
 
 <ArticleViews slug="campushub-highlight-cssgrid" />
 
-# 项目亮点：CSS Grid 响应式与 GPU 硬件加速动效
-
-> **简历描述回溯**：放弃引入沉重的第三方库，利用原生 `CSS Grid` 与 CSS 变量纯手写了响应式大盘极简换肤。在玻璃拟态动效编写时严格利用 `transform` 与 `opacity` 触发 **GPU 硬件加速**，规避因大量 DOM 变更引发的频繁**重排（Reflow）与重绘（Repaint）**。
-
 ## 1. 为什么要做这个优化？
 在 CampusHub 组队大厅中，我们需要展示众多类似“便当盒（Bento）”风格的用户卡片卡片。如果使用 ECharts 或者重型的瀑布流第三方库，仅这部分组件的打包体积就会暴增（几十上百 KB）。
 作为前端开发，我们需要有**“包体积缩减”**意识。考虑到现在的浏览器引擎极其强大，对于规整的卡片阵列布局，利用原生的 `CSS Grid` 可以做到 0 额外 JS 开销加载；而通过 CSS 变量（CSS Variables）切换深色模式，同样免去了在 JS 里硬编码写判断逻辑的冗杂。
