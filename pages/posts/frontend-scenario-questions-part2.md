@@ -14,6 +14,46 @@ tags:
 
 ## 题目列表
 
-(内容待填充)
+### 1. 简易用 Hook 封装请求 (useRequest)
+```javascript
+function useRequest(apiFn) {
+  const data = ref(null);
+  const loading = ref(false);
+  const run = async (...args) => {
+    loading.value = true;
+    data.value = await apiFn(...args);
+    loading.value = false;
+  };
+  return { data, loading, run };
+}
+```
+
+### 2. 监听窗口大小 Hook (useWindowSize)
+```javascript
+function useWindowSize() {
+  const size = reactive({ width: window.innerWidth, height: window.innerHeight });
+  const onResize = () => {
+    size.width = window.innerWidth;
+    size.height = window.innerHeight;
+  };
+  window.addEventListener('resize', onResize);
+  onUnmounted(() => window.removeEventListener('resize', onResize));
+  return size;
+}
+```
+
+### 3. 解析 URL 参数 (URLSearchParams)
+```javascript
+function getQueryParams(url) {
+  const params = {};
+  const search = url.split('?')[1];
+  if (!search) return params;
+  search.split('&').forEach(pair => {
+    const [key, val] = pair.split('=');
+    params[key] = decodeURIComponent(val);
+  });
+  return params;
+}
+```
 
 <ArticleComments slug="frontend-scenario-questions-part2" />

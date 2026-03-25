@@ -15,6 +15,61 @@ tags:
 
 ## 题目列表
 
-(内容待填充)
+### 1. 防抖 (Debounce)
+```javascript
+function debounce(fn, delay) {
+  let timer = null;
+  return function (...args) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+```
+
+### 2. 节流 (Throttle)
+```javascript
+function throttle(fn, delay) {
+  let last = 0;
+  return function (...args) {
+    let now = Date.now();
+    if (now - last >= delay) {
+      fn.apply(this, args);
+      last = now;
+    }
+  };
+}
+```
+
+### 3. 深拷贝 (Deep Clone)
+```javascript
+function deepClone(obj, cache = new WeakMap()) {
+  if (obj === null || typeof obj !== 'object') return obj;
+  if (cache.has(obj)) return cache.get(obj);
+  
+  const clone = Array.isArray(obj) ? [] : {};
+  cache.set(obj, clone);
+  
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) clone[key] = deepClone(obj[key], cache);
+  }
+  return clone;
+}
+```
+
+### 4. 手写 Promise.all
+```javascript
+Promise.myAll = function(promises) {
+  return new Promise((resolve, reject) => {
+    let results = [], count = 0;
+    promises.forEach((p, i) => {
+      Promise.resolve(p).then(res => {
+        results[i] = res;
+        count++;
+        if (count === promises.length) resolve(results);
+      }).catch(reject);
+    });
+  });
+};
+```
 
 <ArticleComments slug="frontend-handwritten-questions-part1" />

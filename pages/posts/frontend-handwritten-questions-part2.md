@@ -15,6 +15,62 @@ tags:
 
 ## 题目列表
 
-(内容待填充)
+### 1. 函数柯里化 (Currying)
+```javascript
+function curry(fn, ...args) {
+  return args.length >= fn.length 
+    ? fn(...args) 
+    : (...newArgs) => curry(fn, ...args, ...newArgs);
+}
+```
+
+### 2. 发布订阅模式 (EventEmitter)
+```javascript
+class EventEmitter {
+  constructor() { this.events = {}; }
+  on(type, cb) {
+    (this.events[type] || (this.events[type] = [])).push(cb);
+  }
+  emit(type, ...args) {
+    if (this.events[type]) this.events[type].forEach(cb => cb(...args));
+  }
+  off(type, cb) {
+    if (this.events[type]) {
+      this.events[type] = this.events[type].filter(fn => fn !== cb);
+    }
+  }
+}
+```
+
+### 3. 数组扁平化 (Flatten)
+```javascript
+function flatten(arr) {
+  return arr.reduce((pre, cur) => 
+    pre.concat(Array.isArray(cur) ? flatten(cur) : cur), []
+  );
+}
+```
+
+### 4. 模拟 new 操作符
+```javascript
+function myNew(constructor, ...args) {
+  const obj = Object.create(constructor.prototype);
+  const result = constructor.apply(obj, args);
+  return (typeof result === 'object' && result !== null) ? result : obj;
+}
+```
+
+### 5. 模拟 instanceof
+```javascript
+function myInstanceof(left, right) {
+  let proto = Object.getPrototypeOf(left);
+  let prototype = right.prototype;
+  while (proto !== null) {
+    if (proto === prototype) return true;
+    proto = Object.getPrototypeOf(proto);
+  }
+  return false;
+}
+```
 
 <ArticleComments slug="frontend-handwritten-questions-part2" />

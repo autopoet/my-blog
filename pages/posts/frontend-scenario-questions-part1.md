@@ -14,6 +14,40 @@ tags:
 
 ## 题目列表
 
-(内容待填充)
+### 1. 虚拟列表 (Virtual List) 简易版
+```javascript
+// 仅保留计算 offset 和渲染逻辑
+function updateVisibleItems(scrollTop) {
+  const start = Math.floor(scrollTop / itemHeight);
+  const end = start + visibleCount;
+  this.visibleList = allList.slice(start, end);
+  this.offset = start * itemHeight; // 维持滚动条位置
+}
+```
+
+### 2. 图片懒加载 (IntersectionObserver)
+```javascript
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      observer.unobserve(img);
+    }
+  });
+});
+```
+
+### 3. 异步并发控制 (limit)
+```javascript
+async function limitRequests(urls, limit) {
+  const pool = new Set();
+  for (const url of urls) {
+    const task = fetch(url).then(() => pool.delete(task));
+    pool.add(task);
+    if (pool.size >= limit) await Promise.race(pool);
+  }
+}
+```
 
 <ArticleComments slug="frontend-scenario-questions-part1" />

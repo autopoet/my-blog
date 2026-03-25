@@ -14,7 +14,42 @@ tags:
 
 ## 题目列表
 
-(内容待填充)
+### 1. 事件循环 (Event Loop)
+```javascript
+console.log('1');
+setTimeout(() => console.log('2'), 0);
+Promise.resolve().then(() => console.log('3'));
+console.log('4');
+// 输出: 1 4 3 2 
+// 原理: 同步任务 -> 微任务 -> 宏任务
+```
+
+### 2. This 指向与闭包
+```javascript
+const obj = {
+  name: 'Antigravity',
+  say: function() {
+    setTimeout(() => console.log(this.name), 0);
+  },
+  say2: () => console.log(this.name)
+};
+obj.say();  // 'Antigravity' (箭头函数继承 say 的 this)
+obj.say2(); // undefined (箭头函数指向全局/模块)
+```
+
+### 3. 异步顺序 (Async/Await)
+```javascript
+async function async1() {
+  console.log('a');
+  await async2();
+  console.log('b');
+}
+async function async2() { console.log('c'); }
+async1();
+console.log('d');
+// 输出: a c d b
+// 原理: await 后的代码会被包装成微任务
+```
 
 <!-- 下面是测试懒加载效果的代码 -->
 <div style="height: 1200px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; border: 2px dashed #ccc; margin: 20px 0; color: #999;">
