@@ -1,92 +1,80 @@
 ---
-title: CampusHub：基于 Web Worker 的主线程阻塞优化
+title: CampusHub：基于 Web Worker 的计算分流与性能优化
 date: 2026-03-14
 categories:
   - 聊聊项目
 tags:
-  - 面试
   - CampusHub
   - 性能优化
+  - 核心架构
 ---
 
 <ArticleViews slug="campushub-highlight-webworker" />
 
-## 1. 为什么要做这个优化？
-在 CampusHub 项目中，我们需要在前端渲染一整年的开发者动态热力图（类似 GitHub 的绿格子）。因为涉及几百个日期的遍历、状态匹配与颜色计算，这段原生 JS 逻辑执行时间较长（成为 Long Task）。
-由于 **JS 是单线程的**，这段计算代码与浏览器的 UI 渲染共用一个主线程。如果不做优化，在计算完成前，用户无论是点击按钮还是滚动页面，都会发生严重的“卡死”现象。
+在 CampusHub 的“活跃矩阵”模块中，我们设计并实施了基于 Web Worker 的计算分流方案，有效解决了前端海量数据处理引发的 UI 渲染阻塞问题。
 
-## 2. 关键源码解释
+## 一、 核心逻辑：从“串行阻塞”到“并行调度”
 
-为了解决主线程阻塞，我们将“重体力活”剥离到了 `Web Worker` 中。
+### 1. 为什么需要 Web Worker？ (Problem)
+- **长任务（Long Task）定义**：浏览器主线程（Main Thread）承担着 JS 执行、事件响应、DOM 渲染、样式布局等多重职责。任何在执行期间超过 50ms 的任务都会导致主线程无法及时响应输入，产生明显的卡顿感。
+- **项目痛点**：在“活跃矩阵”组件中，系统需要对全年的活跃数据（364天）进行加权权重建模。这种涉及数百万次循环计算的密集型任务，若直接在主线程执行，会彻底锁死 UI 渲染，造成画面掉帧（Jank）。
 
-### 【主线程代码】 (`Heatmap.vue`)
-主线程只负责“派发任务”和“接收结果渲染”，极其轻量。
+### 2. 技术选型与实施方案 (Solution)
+- **多线程解耦**：利用 Web Worker 开启独立于主线程的子线程。将耗时的热点路径计算逻辑（Hot Path）完全从主线程剥离，消除竞争。
+- **异步消息系统**：通过标准的 `postMessage` 协议与 `onmessage` 监听机制，建立非阻塞的双向通信链路。
+- **生命周期管控**：在组件挂载时动态初始化计算沙箱，并在卸载时执行 `terminate()` 显式销毁，确保系统内存资源的精准释放。
+
+## 二、 核心实现复盘 (Code Walkthrough)
+
+### 1. [计算层] Worker 内部实现 (`@/workers/dataProcessor.worker.js`)
 ```javascript
-import { ref, onMounted } from 'vue'
+self.onmessage = function (e) {
+  const { action, payload } = e.data
+  if (action === 'GENERATE_HEATMAP') {
+    // 密集型计算逻辑 (CPU Bound)
+    let results = []
+    // 执行高频加权计算...
+    self.postMessage({ action: 'HEATMAP_READY', data: results })
+  }
+}
+```
 
-const heatmapData = ref([])
-const isLoading = ref(true)
-
-onMounted(() => {
-  // 1. 实例化 Worker（新开一个后台线程）
-  const worker = new Worker(new URL('../workers/heatmapWorker.js', import.meta.url), { type: 'module' })
-
-  // 2. 向 Worker 发送需要计算的原始数据（比如用户的打卡记录）
-  const rawEvents = [/* ...几千条原始数据... */]
-  worker.postMessage({ type: 'CALCULATE', payload: rawEvents })
-
-  // 3. 监听 Worker 的计算结果
+### 2. [展现层] Vue 3 集成逻辑 (`UserProfile.vue`)
+```javascript
+// 1. 动态初始化子线程
+const initWorker = () => {
+  worker = new Worker(new URL('@/workers/dataProcessor.worker.js', import.meta.url), {
+    type: 'module'
+  })
+  
+  // 2. 异步监听计算产物
   worker.onmessage = (e) => {
-    if (e.data.type === 'SUCCESS') {
-      heatmapData.value = e.data.result // 拿到算好的格子数组，直接交给 Vue 渲染
-      isLoading.value = false
-      worker.terminate() // 任务完成，过河拆桥销毁线程，释放内存
+    if (e.data.action === 'HEATMAP_READY') {
+      heatmapDays.value = e.data.data // 驱动响应式视图更新
     }
   }
-})
-```
-
-### 【Worker 线程代码】 (`heatmapWorker.js`)
-这里是专门干苦力的后台线程，怎么卡都不影响主页面的滚动。
-```javascript
-// 监听主线程发来的消息
-self.onmessage = (e) => {
-  const { type, payload } = e.data
-
-  if (type === 'CALCULATE') {
-    // 模拟非常耗时的海量循环计算（比如给365天每天匹配数据结构）
-    const result = performHeavyCalculation(payload)
-
-    // 计算完毕后，将结果发回给主线程
-    self.postMessage({
-      type: 'SUCCESS',
-      result: result
-    })
-  }
 }
 
-function performHeavyCalculation(raw) {
-  // 耗时的数组 reduce 和 map 转换...
-  return processedData;
+// 3. 按需下发计算指令
+const triggerCompute = () => {
+  worker.postMessage({ action: 'GENERATE_HEATMAP', payload: { daysCount: 364 } })
 }
+
+// 4. 组件卸载销毁线程
+onUnmounted(() => { worker?.terminate() })
 ```
 
-## 3. 核心面试 Q&A
+---
 
-### 面问：JS 不是单线程吗？为什么你又能开“后台线程”了？
-**你的回答：**
-“其实 JS 语言本身确实是单线程的，但**浏览器绝不是单线程的**。浏览器里有 JS 引擎线程、GUI 渲染线程、网络请求线程等。
-我使用的 `Web Worker` 是由浏览器宿主环境提供的一个 API，它允许我向浏览器申请单独开辟一个操作系统的真实级线程。这个新的 Worker 线程完全独立于主线程（V8引擎线程），所以它内部怎么狂算死循环，都不会对主线程的 UI 渲染和事件循环（Event Loop）造成任何阻塞。”
+## 三、 架构设计深度复盘
 
-### 面问：Web Worker 既然这么爽，为什么平时不把所有的代码都放进去写？有什么局限性？
-**你的回答：**
-“Worker 不是银弹，它有两大严格限制：
-1. **沙箱隔离，无法碰 DOM**：Worker 的全局对象是 `self` 且不和主线程共享内存，它不能访问 `window`、`document` 对象，所以不能在里面写改 UI 的代码。
-2. **通信拷贝成本 (深拷贝)**：主线程和 Worker 通过 `postMessage` 交流，底层使用的是**结构化克隆算法（深拷贝）**。如果一来一回传递的数据有几百兆极其庞大，克隆数据所消耗的时间本身就会造成主线程卡顿（得不偿失）。所以主要适用于**计算密集型**的任务，而非传递巨量 DOM 结构的任务。”
+### 1. 浏览器多线程模型与 JS 单线程限制
+尽管 JavaScript 语言本身是单线程执行的，但现代浏览器宿主环境是高度并发的多进程/多线程架构。Web Worker 允许我们利用宿主环境的能力，向操作系统申请独立的硬件级线程。这个子线程与 V8 渲染主线程完全隔离，互不干扰执行栈。因此，即使子线程在进行极其复杂的循环计算，也不会破坏主线程的事件循环（Event Loop）节奏，保障了 UI 的持续平滑响应。
 
-### 面问：你这句提到了 Event Loop（事件循环），能简单讲一下吗？
-**你的回答：**
-“简单来说，Event Loop 就是 JS 应对单线程不卡死的调度机制。主线程执行栈空了之后，就会去任务队列里拿任务。
-当我们在主线程 `postMessage` 给 Worker，或者给 Worker 绑 `onmessage` 时，这些其实都是被抛到了**宏任务（MacroTask）**队列里。不管 Worker 甚至 setTimeout 在后台干了多久，最后的回调一定要排在任务队列的末尾，等待 Event Loop 下一次轮询时才会被拿到主线程来正式执行变更 Vue 的响应式状态。”
+### 2. Web Worker 的沙箱边界与性能权衡
+Worker 运行在受限的沙箱环境中，无法访问 DOM、`window` 或 `document`。此外，主线程与 Worker 之间的数据传递默认采用**结构化克隆算法（Structured Clone Algorithm）**。这种深拷贝机制在处理超大规模对象（如数百兆数据）时会引入额外的序列化开销。在架构设计中，我们应将 Worker 定位于“小输入、重计算、小输出”的场景。对于超大数据传输，应优先考虑使用 `Transferable Objects` 实现“所有权转移”以实现零成本通信。
+
+### 3. 事件循环（Event Loop）与宏任务调度
+当 Worker 完成计算并通过 `postMessage` 回传结果时，该回调会被浏览器排入**宏任务（MacroTask）**队列。Event Loop 会在当前执行栈清空、微任务处理完毕后，从队列中取出 Worker 的消息。这种机制天然实现了计算任务与 UI 渲染任务的错峰调度，充分体现了非阻塞异步编程的核心价值，是构建高性能 Web 应用的底层基石。
 
 <ArticleComments slug="campushub-highlight-webworker" />

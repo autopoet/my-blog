@@ -1,12 +1,12 @@
 ---
-title: 计算机网络基础知识 - 第一梯队（极高频）
+title: 计算机网络核心协议深度解析（上）
 date: 2026-01-04
 categories:
   - 啃啃原理
 tags:
   - 计算机网络
-  - 基础
-  - 极高频
+  - HTTP 协议
+  - 网络架构
 ---
 <ArticleViews slug="computer-networks-basics-tier-1" />
 

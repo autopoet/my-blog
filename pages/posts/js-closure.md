@@ -11,7 +11,7 @@ tags:
 <ArticleViews slug="js-closure" />
 
 
-> 闭包是 JavaScript 中最强大的特性之一，也是面试中的“常客”。
+> 闭包是 JavaScript 语言体系中最为核心且强大的特性之一，是深入理解作用域链、异步编程及函数式编程的基石。
 
 ## 1. 什么是闭包？
 

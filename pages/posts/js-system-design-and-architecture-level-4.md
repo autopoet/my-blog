@@ -1,14 +1,14 @@
 ---
-title: JavaScript 面试题 - 第四梯队（中频）
+title: JavaScript 知识拓宽与周边生态
 date: 2025-12-28
 categories:
   - 啃啃原理
 tags:
   - JavaScript
-  - 面试
-  - 中频
+  - 拓宽
+  - 知识体系
 ---
-<ArticleViews slug="js-interview-tier-4" />
+<ArticleViews slug="js-system-design-and-architecture-level-4" />
 
 
 ## 1. JavaScript 模块化机制是什么？ESM 如何运行？
@@ -66,4 +66,4 @@ tags:
 
 - `for...of` 背后的原理是调用对象的 `[Symbol.iterator]` 方法。如果对象没有实现该方法，它就不是一个“可迭代对象”，JS 引擎不知道如何分步骤输出它的值，因此会抛出错误。
 
-<ArticleComments slug="js-interview-tier-4" />
+<ArticleComments slug="js-system-design-and-architecture-level-4" />

@@ -1,19 +1,20 @@
 ---
-title: CSS 手写专题
+title: CSS 核心布局与样式手写实现专题
 date: 2025-11-07
 categories:
   - 写写代码
 tags:
   - CSS
-  - 手写
-  - 面试
+  - 手写实现
+  - 样式方案
 ---
-<ArticleViews slug="css-hand-writing-questions" />
+
+<ArticleViews slug="css-layout-and-styling-implementation" />
 
 
-# CSS 手写专题
+# CSS 核心布局与样式手写实现专题
 
-> **面试话术**：同一个布局问题，我通常会优先使用 **Flex** 作为现代方案（Grid 也多在特定场景）。同时我也清楚 **Float**、**Absolute** 等传统实现方式及其原理与适用场景，在需要兼容或特殊布局时可以切换。
+> **技术深度探讨**：在处理布局问题时，通常优先采用 **Flexbox** 作为现代标准方案，在大规模网格控制下会结合 **CSS Grid**。同时，深入理解 **Float**、**Positioning** 等传统实现方案及其底层原理（如 BFC、文档流特性），能够确保在复杂兼容性场景或特殊视觉需求下，灵活选择最稳健的工程实践。
 
 ---
 
@@ -125,11 +126,11 @@ tags:
 }
 ```
 
-- **面试加分点**：Grid 更适合二维布局，复杂页面结构下可读性最好。
+- **架构建议**：Grid 更适合二维布局，复杂页面结构下可读性最佳。
 
 ---
 
-## 三、 水平垂直居中（高频必考）
+## 三、 水平垂直居中方案汇总
 
 **HTML 结构**：
 
@@ -372,4 +373,4 @@ tags:
   opacity: 1;
 }
 
-<ArticleComments slug="css-hand-writing-questions" />
+<ArticleComments slug="css-layout-and-styling-implementation" />

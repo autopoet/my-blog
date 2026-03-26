@@ -1,14 +1,14 @@
 ---
-title: JavaScript 面试题 - 第三梯队（中高频）
+title: JavaScript 深度扩展知识体系
 date: 2025-12-25
 categories:
   - 啃啃原理
 tags:
   - JavaScript
-  - 面试
-  - 中高频
+  - 深度
+  - 知识体系
 ---
-<ArticleViews slug="js-interview-tier-3" />
+<ArticleViews slug="js-engineering-and-optimization-level-3" />
 
 
 ## 1. JavaScript 数组有哪些常用方法？
@@ -94,4 +94,4 @@ tags:
 - **defineProperty**：劫持具体属性；无法检测新增或删除属性；需要递归处理嵌套对象；性能较重。
 - **Proxy**：劫持整个对象；原生支持检测新增/删除、数组下标变化；支持 13 种拦截操作；通过惰性处理提升性能。
 
-<ArticleComments slug="js-interview-tier-3" />
+<ArticleComments slug="js-engineering-and-optimization-level-3" />

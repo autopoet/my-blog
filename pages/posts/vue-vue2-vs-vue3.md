@@ -50,19 +50,18 @@ tags:
 
 ---
 
-## 面试真题：大厂高频考点
+## 3. 核心机制精探
 
-### Q1：Proxy vs Object.defineProperty 的本质区别？
-* **defineProperty**：只能劫持已有的属性。如果对象嵌套很深，需要递归遍历到底，性能开销大。
-* **Proxy**：代理的是整个对象。哪怕你动态加了 100 个属性，它都能拦截到。此外，它还能拦截数组下标变化、`delete` 操作等。
+### 深入对比：Proxy 与 Object.defineProperty 的底层原理
+- **defineProperty**：只能劫持已有的属性。如果对象嵌套很深，需要递归遍历到底，性能开销大。
+- **Proxy**：直接代理整个对象，能够高效拦截动态属性添加、数组下标变化及 `delete` 操作，性能表现更优。
 
-### Q2：setup 的作用与优势？
-* `setup` 是 Composition API 的入口。
-* **逻辑复用**：解决了 Mixins 命名冲突 and 来源不明的问题。
-* **组织清晰**：让代码逻辑可以像积木一样抽离成独立的函数（Hooks），在不同组件间灵活组合。
+### 业务逻辑复用：setup 的设计初衷与优势
+- `setup` 作为 Composition API 的入口，从根本上解决了 **Mixins** 维护成本高、命名冲突等痛点。
+- **逻辑解耦**：允许将业务逻辑按功能单元抽离为独立的 Hooks 函数，实现跨组件的高度复用与灵活组合。
 
-### Q3：Tree-shaking 如何减少未使用代码？
-* Vue 2 的很多全局 API 是挂载在 Vue 原型上的，不管你用不用都会被打进包里。
-* Vue 3 改成了 **ES Modules (import/export)** 导出方式。编译器在打包时会分析依赖树，没被 `import` 的代码会被标记为“死代码”并剔除，从而显著减小首屏加载体积。
+### 工程化优化：Tree-shaking 如何精简打包体积
+- Vue 2 的全局 API 多挂载在原型上，难以剔除未使用内容。
+- Vue 3 采用 **ES Modules** 导出机制。在构建阶段，编译器通过静态分析依赖树，剔除未被 `import` 的冗余代码，显著降低首屏资源加载负担。
 
 <ArticleComments slug="vue-vue2-vs-vue3" />

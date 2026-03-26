@@ -83,6 +83,6 @@ console.log(Object.prototype.__proto__); // null
 
 - **原型链终点**：`Object.prototype.__proto__ === null`。
 
-> 这是面试中最高频的问题之一，建议熟练背诵并能手画原型链图。
+> **架构启示**：深入理解原型链机制不仅有助于掌握 JavaScript 的继承模型，更是编写高效组件库、实现深度状态管理及高性能代码复用的底层基石。建议结合具体的工程实践（如封装基类、扩展原生原型等）进行深入思考。
 
 <ArticleComments slug="js-prototype" />

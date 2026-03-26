@@ -1,14 +1,14 @@
 ---
-title: JavaScript 面试题 - 第一梯队（极高频）
+title: JavaScript 核心必会知识体系
 date: 2025-12-20
 categories:
   - 啃啃原理
 tags:
   - JavaScript
-  - 面试
-  - 极高频
+  - 核心
+  - 知识体系
 ---
-<ArticleViews slug="js-interview-tier-1" />
+<ArticleViews slug="js-core-fundamentals-level-1" />
 
 
 ## 1. 什么是 JavaScript 事件循环 (Event Loop)？宏任务和微任务执行顺序是怎样的？
@@ -105,4 +105,4 @@ JS 运行时主要包含：
 3. **构造函数**：箭头函数不能作为构造函数（不能 `new`），没有 `prototype`。
 4. **绑定丢失**：普通函数的 this 是调用时确定的，箭头函数的 this 是定义时确定的。
 
-<ArticleComments slug="js-interview-tier-1" />
+<ArticleComments slug="js-core-fundamentals-level-1" />

@@ -40,7 +40,7 @@ tags:
 
 ---
 
-## 4. 常见面试点
+## 4. 核心考点与工程实践
 
 ### HTML5 离线缓存 (Manifest)
 （注：现代 Web 开发更多使用 Service Workers）

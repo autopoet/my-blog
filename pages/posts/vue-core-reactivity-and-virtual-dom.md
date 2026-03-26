@@ -1,17 +1,17 @@
 ---
-title: Vue 原理类高频面试题 (Vue 3)
+title: Vue 3 核心原理深度进阶
 date: 2025-12-15
 categories:
   - 啃啃原理
 tags:
   - Vue
   - 核心
-  - 面试
+  - 技术进阶
 ---
 <ArticleViews slug="vue-theory-high-frequency-questions" />
 
 
-# Vue 原理类高频面试题
+# Vue 3 核心原理深度进阶
 
 ## 1. Vue 的响应式系统中，Object.defineProperty 和 Proxy 在实现上有何本质区别？Vue3 改用 Proxy 解决了哪些痛点？
 **提示**：数组监听、动态属性、性能开销

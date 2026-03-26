@@ -1,17 +1,17 @@
 ---
-title: Vue 实战类高频面试题 (Vue 3)
+title: Vue 3 实战技巧与性能优化
 date: 2025-12-18
 categories:
   - 啃啃原理
 tags:
   - Vue
   - 核心
-  - 面试
+  - 实战技巧
 ---
 <ArticleViews slug="vue-practical-high-frequency-questions" />
 
 
-# Vue 实战类高频面试题
+# Vue 3 实战技巧与性能优化
 
 ## 1. v-if 与 v-show 的区别
 
@@ -73,7 +73,7 @@ tags:
 - **流程说明**：Vue 的模板首先被编译为 render 函数，再由 render 函数生成虚拟 DOM（VNode），最终 Vue 对比新旧 VNode，将差异更新到真实 DOM。
 - **setup 数据绑定**：组合式 API 中，setup 返回的数据、方法、计算属性会被绑定到模板形成响应式依赖。数据变化时，通过依赖追踪机制触发对应 VNode 更新，实现视图自动刷新。
 
-**面试话术示例：**
-> 模板渲染流程可以总结为 `template → 编译 → render function → VNode → DOM`。在 setup 中返回的数据会建立响应式依赖，数据变化会驱动模板对应的 DOM 更新。
+**核心逻辑表达：**
+> 实战中的模板渲染流程可以总结为 `template → 编译 → render function → VNode → DOM`。在 setup 中返回的数据会建立响应式依赖，通过响应式驱动实现视图的自动更新。
 
 <ArticleComments slug="vue-practical-high-frequency-questions" />
