@@ -26,6 +26,15 @@ export default defineValaxyConfig<UserThemeConfig>({
       },
     },
 
+    say: {
+      enable: true,
+      api: '/say.json',
+      hitokoto: {
+        enable: false,
+        api: '',
+      },
+    },
+
     pages: [],
 
     footer: {
