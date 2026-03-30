@@ -32,11 +32,11 @@ tags:
 
 Prompt Engineering 是引导 LLM 生成高质量输出的艺术。
 
-*   **Zero-shot**：直接提问，不给任何参考示例。
-*   **Few-shot**：提供 2-3 个标准格式示例，让模型模仿。
-*   **Chain-of-Thought (CoT)**：引导模型“一步步思考”。
-*   **Role Prompting**：设定专业人设（如“你是一位天才架构师”）。
-*   **Structured Output**：明确要求以 JSON 或 Markdown 表格形式回复。
+* Zero-shot：直接提问，不给任何参考示例。
+* Few-shot：提供 2-3 个标准格式示例，让模型模仿。
+* Chain-of-Thought (CoT)：引导模型“一步步思考”。
+* Role Prompting：设定专业人设。
+* Structured Output：要求以 JSON 或 Markdown 表格形式回复。
 
 ### 3. Token 与上下文窗口
 
@@ -53,9 +53,52 @@ Prompt Engineering 是引导 LLM 生成高质量输出的艺术。
 | **Top-p** | 核心采样，从累积概率顶部的 Token 中选择 | 0.5 - 0.8 | 0.9+ |
 | **Top-k** | 从概率最高的前 k 个词中采样 | 10 - 20 | 50+ |
 
+### 5. Transformer 核心架构
+
+**Transformer** 是 2017 年 Google 提出的基于注意力机制的神经网络架构，彻底抛弃了传统的 RNN/CNN，成为现代大模型的地基。
+
+#### **核心组件与作用**
+*   **Embedding**：将 token 转为高维向量。
+*   **Positional Encoding**：由于模型同时处理所有 token，需要注入位置信息。
+*   **Multi-Head Attention**：多头自注意力机制，捕捉不同维度的语义关系。
+*   **Layer Norm & Residual Connection**：稳定训练，缓解深层网络梯度消失问题。
+
+#### **Self-Attention：Q / K / V 分别是什么？**
+在计算注意力时，每个 token 会生成三个向量：
+1. **Q (Query)**：查询 — 表示当前 token 想查询什么信息。
+2. **K (Key)**：键 — 表示每个 token 能提供什么信息。
+3. **V (Value)**：值 — 实际传递的信息内容。
+
+**计算流程**：`Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) * V`
+*注：除以 sqrt(d_k) 是为了防止点积过大导致梯度消失。*
+
+#### **为什么 Attention 比 RNN 强？**
+
+| 特性 | RNN | Attention (Transformer) |
+| :--- | :--- | :--- |
+| **并行性** | 串行计算，速度慢 | 完全并行计算，速度快 |
+| **长距离依赖** | 易产生梯度消失，难以捕捉 | 直接点对点连接，距离无关 |
+| **可解释性** | 弱（黑盒状态） | 强（注意力权重可视化） |
+
+#### **KV Cache：为什么能优化推理？**
+KV Cache 缓存了生成过程中已计算 token 的 K 和 V 矩阵，避免了自回归生成时的重复计算。
+*   **效果**：显著降低推理延迟，将时间复杂度从 O(n³) 降至 O(n²)。
+*   **进阶**：如 PagedAttention (vLLM) 进一步优化了显存利用率。
+
 ---
 
-## 二、 幻觉 (Hallucination) 及其缓解
+## 二、 训练阶段 vs 推理阶段
+
+| 维度 | 训练 (Training) | 推理 (Inference/Serving) |
+| :--- | :--- | :--- |
+| **目标** | 学习模式并更新参数 | 基于输入生成输出 |
+| **计算方式** | 并行处理整个序列 | 自回归（逐个词生成） |
+| **KV Cache** | 不需要 | **必须**，否则性能极低 |
+| **精度** | 通常使用 FP16/BF16 | 常用量化技术（INT8/INT4） |
+
+---
+
+## 三、 幻觉 (Hallucination) 及其缓解
 
 **幻觉**指的是 LLM 生成了看似合理但事实错误的内容。
 
@@ -67,7 +110,7 @@ Prompt Engineering 是引导 LLM 生成高质量输出的艺术。
 
 ---
 
-## 三、 核心 AI 技术体系
+## 四、 核心 AI 技术体系
 
 ### 1. RAG / Agent / Function Calling / MCP / Skills
 
