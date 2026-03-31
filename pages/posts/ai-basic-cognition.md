@@ -11,8 +11,6 @@ tags:
 
 <ArticleViews slug="ai-basic-cognition" />
 
-> AI 技术正如火如荼地改变着世界。了解大模型（LLM）的基础概念及其背后的技术体系，是掌握 AI 开发的第一步。
-
 ## 一、 基础概念
 
 ### 1. 什么是 LLM？和传统 NLP 有什么区别？
