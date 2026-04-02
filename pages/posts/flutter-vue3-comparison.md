@@ -2,7 +2,7 @@
 title:  快速了解 Flutter
 date: 2026-04-02
 categories:
-  - 写写代码
+  - 学学技术
 tags:
   - Flutter
   - Vue3
