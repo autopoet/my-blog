@@ -17,10 +17,12 @@ tags:
 在进入业务逻辑开发前，构建稳定且标准化的基建环境是首要任务。
 
 ### 1. IDE 部署与挂载
+
 - **获取镜像**：访问 [Android Developer 官网](https://developer.android.google.cn/studio) 进行下载。建议选择长期支持版本 (LTS) 以保证稳定性。
 - **环境初始化**：安装过程中，IDE 会引导进行 **Standard** 类型安装。对于国内开发者，建议在 `Appearance & Behavior > System Settings > HTTP Proxy` 中配置镜像代理，以解决 Gradle 依赖同步缓慢的问题。
 
 ### 2. SDK 治理
+
 - 打开 `Tools > SDK Manager`。
 - **Platforms**：勾选当前主流的 Android API 版本（如 Android 13/14）。
 - **SDK Tools**：确保 `Android SDK Build-Tools`、`Android Emulator` 和 `Google Play services` 已正确就绪。
@@ -30,16 +32,19 @@ tags:
 完成基建后，我们通过一个“Hello World”项目来验证整个流水线的连通性。
 
 ### 1. 初始化项目 (Init)
+
 - 点击 **New Project**，在模板库中选择 **Empty Views Activity**。
 - **Name**: `HelloEngineering`
 - **Language**: 推荐使用 `Kotlin`（现代 Android 开发的工业标准）。
 - **Minimum SDK**: 建议选择 API 24 (Android 7.0)，覆盖全球约 95% 以上的活跃设备。
 
 ### 2. 代码编译与构件生成 (Build)
+
 - 项目创建后，底部 `Build` 栏会启动 **Gradle Sync**。
 - 当状态显示为 `BUILD SUCCESSFUL` 时，表示项目的依赖拓扑与编译链路已打通。
 
 ### 3. 运行载体部署 (Run)
+
 - **虚拟化方案**：通过 `Device Manager` 创建一个 Pixel 设备的 AVD。
 - **执行指令**：点击工具栏的绿色运行按钮（`Shift + F10`）。
 - **预期结果**：模拟器成功启动，屏幕中心出现“Hello World!”字样。
