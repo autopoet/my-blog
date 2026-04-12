@@ -27,6 +27,11 @@ function curry(fn) {
     }
   };
 }
+
+// 测试
+const sum = (a, b, c) => a + b + c;
+const curriedSum = curry(sum);
+console.log(curriedSum(1)(2)(3)); // 6
 ```
 
 ## 2. 深拷贝 (Deep Clone)
@@ -44,6 +49,12 @@ function deepClone(obj) {
   }
   return newObj;
 }
+
+// 测试
+const original = { a: 1, b: { c: 2 } };
+const clone = deepClone(original);
+clone.b.c = 3;
+console.log(original.b.c); // 2
 ```
 
 ## 3. 防抖 (Debounce)
@@ -61,6 +72,10 @@ function debounced(fn, time) {
     }, time);
   };
 }
+
+// 测试
+const log = debounced(() => console.log('debounce'), 100);
+log(); log(); log(); // 100ms 后仅输出一次
 ```
 
 ## 4. 节流 (Throttle)
@@ -78,6 +93,10 @@ function throttle(fn, time) {
     }
   };
 }
+
+// 测试
+const log = throttle(() => console.log('throttle'), 100);
+log(); log(); log(); // 立即输出一次
 ```
 
 ## 5. Function.prototype.bind
@@ -89,6 +108,11 @@ Function.prototype.myBind = function (obj, ...args) {
     this.call(context, ...args, ...args2);
   };
 }
+
+// 测试
+const obj = { x: 42 };
+const fn = function() { console.log(this.x); };
+fn.myBind(obj)(); // 42
 ```
 
 ## 6. Function.prototype.call
@@ -103,6 +127,11 @@ Function.prototype.myCall = function (obj, ...args) {
 
   return result;
 }
+
+// 测试
+const obj = { x: 42 };
+const fn = function(y) { console.log(this.x + y); };
+fn.myCall(obj, 8); // 50
 ```
 
 ## 7. Function.prototype.apply
@@ -122,6 +151,11 @@ Function.prototype.myApply = function (obj, argArray) {
 
   return result;
 }
+
+// 测试
+const obj = { x: 42 };
+const fn = function(y, z) { console.log(this.x + y + z); };
+fn.myApply(obj, [8, 10]); // 60
 ```
 
 ## 8. 实现数组 reduce 方法
@@ -149,6 +183,9 @@ Array.prototype.myReduce = function (fn, init) {
 
   return total;
 };
+
+// 测试
+console.log([1, 2, 3].myReduce((acc, cur) => acc + cur, 0)); // 6
 ```
 
 ## 9. 数组拍平 (Flat)
@@ -166,6 +203,9 @@ function myFlat(arr, depth = 1) {
 
   return result;
 }
+
+// 测试
+console.log(myFlat([1, [2, [3]]], 1)); // [1, 2, [3]]
 ```
 
 ## 10. 实现 new 操作符
@@ -175,6 +215,11 @@ function myNew(fn, ...args) {
   fn.apply(obj, args);
   return obj;
 }
+
+// 测试
+function Person(name) { this.name = name; }
+const p = myNew(Person, 'Tom');
+console.log(p.name); // Tom
 ```
 
 ## 11. 实现 instanceof
@@ -192,6 +237,9 @@ function myInstanceof(left, right) {
 
   return false;
 }
+
+// 测试
+console.log(myInstanceof([], Array)); // true
 ```
 
 ## 12. 实现 Promise.all
@@ -219,6 +267,11 @@ Promise.myAll = function (list) {
     });
   });
 };
+
+// 测试
+const p1 = Promise.resolve(1);
+const p2 = Promise.resolve(2);
+Promise.myAll([p1, p2]).then(console.log); // [1, 2]
 ```
 
 <ArticleComments slug="javascript-essential-poly-fills" />
