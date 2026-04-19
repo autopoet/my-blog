@@ -2,7 +2,7 @@
 title: Vue 3 开发者的 React 入门笔记
 date: 2026-04-09
 categories:
-  - 学学技术
+  - 啃啃原理
 tags:
   - Vue3
   - React
