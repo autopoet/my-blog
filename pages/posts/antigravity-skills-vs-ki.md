@@ -65,6 +65,4 @@ tags:
 
 如果说 Skill 是解决问题的“方法论”，那么 KI 就是支撑决策的“数据库”。优秀的开发者应该善于将自己的工程直觉转化为可被 AI 理解的结构化文档，从而实现从“手工业编程”向“ AI 驱动的工业化开发”转型。
 
----
-
 <ArticleComments slug="antigravity-skills-vs-ki" />

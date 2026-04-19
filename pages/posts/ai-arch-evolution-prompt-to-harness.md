@@ -10,7 +10,7 @@ tags:
 
 <ArticleViews slug="ai-arch-evolution-prompt-to-harness" />
 
-以前觉得只要会写提示词（Prompt）就行了，但真动手时才发现，怎么让 AI 稳健地在生产环境跑起来才是大头。这个过程演变有三个阶段：**Prompt Engineering**、**Context Engineering** 和 **Harness Engineering**。
+> 以前觉得只要会写提示词（Prompt）就行了，但真动手时才发现，怎么让 AI 稳健地在生产环境跑起来才是大头。这个过程演变有三个阶段：**Prompt Engineering**、**Context Engineering** 和 **Harness Engineering**。
 
 ### 1. Prompt Engineering（提示词工程）
 
@@ -36,8 +36,6 @@ tags:
 - **Evaluation (评估平台)：** 不能只靠肉眼看每一个结果。需要构建 **Evals 流程**，无论是用规则断言还是 LLM-as-a-Judge，都要量化地评估每一版改动的优劣。
 - **Guardrails (安全护栏)：** 建立输入输出的硬核过滤机制。比如防止 Prompt 注入攻击，或者通过敏感词库确保模型不乱说话。
 - **Agentic Infrastructure：** 当模型需要调用外部工具时，它可能会出错。我们需要一个能够处理状态管理、异常捕获和**自修复（Self-correction）**的运行环境。比如模型写错了 SQL，Harness 应该能捕获这个报错并反馈给模型让其重试，而不是直接崩掉。
-
----
 
 **未完待续...**
 
