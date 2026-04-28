@@ -2,7 +2,7 @@
   <img src="./public/logo.png" width="120" height="120" alt="autopoet blog logo" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </p>
 
-<h1 align="center">基于 Valaxy 构建的个人博客</h1>
+<h1 align="center">基于 Valaxy 的个人博客</h1>
 
 <p align="center">
   <strong>我的前端学习与成长记录</strong>
