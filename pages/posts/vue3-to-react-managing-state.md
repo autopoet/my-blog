@@ -399,6 +399,20 @@ function TaskApp() {
 - reducer 根据旧 state 和 action 返回新 state。
 - reducer 必须保持纯粹，不要直接修改旧 state。
 
+更专业一点说，`dispatch` 接收的是一个 **action 对象**。`type` 是 action 的标识，用来告诉 reducer 发生了什么事件；除 `type` 之外的字段，是这个事件携带的上下文数据，也就是 reducer 计算下一个 state 所需的最小信息。
+
+比如：
+
+```jsx
+dispatch({
+  type: 'added',
+  id: crypto.randomUUID(),
+  text,
+});
+```
+
+这里的 `type: 'added'` 表示“发生了新增任务事件”，`id` 和 `text` 则是新增任务所需的上下文数据。reducer 不关心按钮在哪里点的，也不关心表单长什么样，它只关心：发生了什么事件，以及根据这次事件计算新 state 需要哪些信息。
+
 这有点像把“状态怎么变”的逻辑从组件里抽出去。它不等于 Redux，但心智模型很接近。
 
 ## 10. 用 Context 避免层层传 props
