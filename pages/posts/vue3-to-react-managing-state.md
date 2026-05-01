@@ -413,6 +413,42 @@ dispatch({
 
 这里的 `type: 'added'` 表示“发生了新增任务事件”，`id` 和 `text` 则是新增任务所需的上下文数据。reducer 不关心按钮在哪里点的，也不关心表单长什么样，它只关心：发生了什么事件，以及根据这次事件计算新 state 需要哪些信息。
 
+判断 action 字段时，可以用一个很实用的问题：
+
+> reducer 处理这个事件时，需要知道哪些额外信息？
+
+如果不需要额外信息，只传 `type`：
+
+```jsx
+dispatch({ type: 'claim_started' });
+```
+
+如果需要一个 id：
+
+```jsx
+dispatch({ type: 'deleted', id });
+```
+
+如果需要一个对象：
+
+```jsx
+dispatch({ type: 'changed', task });
+```
+
+如果需要接口返回数据：
+
+```jsx
+dispatch({ type: 'progress_loaded', progress });
+```
+
+如果需要错误信息：
+
+```jsx
+dispatch({ type: 'claim_failed', error });
+```
+
+一句话：**action 除了 `type` 之外，只放 reducer 计算下一个 state 必须知道的信息。** 不要把组件内部临时变量、DOM 事件对象、按钮文案这类和状态计算无关的东西塞进 action。
+
 这有点像把“状态怎么变”的逻辑从组件里抽出去。它不等于 Redux，但心智模型很接近。
 
 ## 10. 用 Context 避免层层传 props
