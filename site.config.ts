@@ -3,13 +3,13 @@ import { defineSiteConfig } from 'valaxy'
 export default defineSiteConfig({
   url: 'https://blog.autopoet.cn/',
   lang: 'zh-CN',
-  title: '前端学习笔记',
+  title: 'Autopoet 技术笔记',
   favicon: '/logo.png',
   author: {
     name: 'autopoet',
     avatar: '/me.jpg',
   },
-  description: '一名正在努力进修的前端开发者 | 记录成长与思考',
+  description: '一个记录技术学习、工程实践与思考成长的个人博客',
   social: [
     {
       name: 'RSS',
