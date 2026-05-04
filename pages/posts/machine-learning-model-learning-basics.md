@@ -1,6 +1,6 @@
 ---
 title: 机器学习基础：模型在学习什么
-date: 2025-12-10
+date: 2025-10-22
 categories:
   - AI
 tags:

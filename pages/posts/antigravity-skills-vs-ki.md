@@ -1,6 +1,6 @@
 ---
 title: Skill 指令集与 KI 知识库的协同演进
-date: 2026-04-14
+date: 2026-04-18
 categories:
   - AI
 tags:

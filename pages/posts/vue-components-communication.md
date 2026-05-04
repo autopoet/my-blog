@@ -1,6 +1,6 @@
 ---
 title: Vue 组件与通信
-date: 2025-12-12
+date: 2025-12-18
 categories:
   - 前端
 tags:

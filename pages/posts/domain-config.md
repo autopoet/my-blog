@@ -1,6 +1,6 @@
 ---
 title: 自定义域名配置
-date: 2026-02-05
+date: 2026-02-10
 categories:
   - 计算机基础
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Vue 中的 MVVM 架构模式
-date: 2025-11-13
+date: 2025-11-21
 categories:
   - 前端
 tags:

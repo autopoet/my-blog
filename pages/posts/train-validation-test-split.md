@@ -1,6 +1,6 @@
 ---
 title: 训练集、验证集与测试集
-date: 2025-12-17
+date: 2025-11-01
 categories:
   - AI
 tags:

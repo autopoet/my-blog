@@ -1,6 +1,6 @@
 ---
 title: Hive 基础：用 SQL 分析大规模数据
-date: 2025-10-24
+date: 2025-08-24
 categories:
   - 大数据
 tags:

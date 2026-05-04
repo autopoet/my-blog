@@ -1,6 +1,6 @@
 ---
 title: 过拟合与欠拟合基础
-date: 2025-12-22
+date: 2025-11-07
 categories:
   - AI
 tags:

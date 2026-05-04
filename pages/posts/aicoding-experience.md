@@ -1,6 +1,6 @@
 ---
 title: AI Coding 使用心得
-date: 2026-04-06
+date: 2026-04-12
 categories:
   - AI
 tags:

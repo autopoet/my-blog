@@ -1,6 +1,6 @@
 ---
 title: JS 基础：原型与原型链
-date: 2025-10-31
+date: 2025-10-20
 categories:
   - 前端
 tags:

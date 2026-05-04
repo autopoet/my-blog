@@ -1,6 +1,6 @@
 ---
 title: AI 基础认知
-date: 2026-03-25
+date: 2026-03-27
 categories:
   - AI
 tags:

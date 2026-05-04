@@ -1,6 +1,6 @@
 ---
 title: 数据挖掘基础（三）：关联规则
-date: 2025-12-04
+date: 2025-10-18
 categories:
   - 大数据
 tags:
