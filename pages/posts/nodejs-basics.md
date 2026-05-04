@@ -2,7 +2,7 @@
 title: Node.js 基础教程
 date: 2026-01-28
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Node.js
   - 后端

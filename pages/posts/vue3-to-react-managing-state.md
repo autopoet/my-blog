@@ -2,7 +2,7 @@
 title: Vue3 转 React 学习笔记（四）：状态管理
 date: 2026-04-30
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue3
   - React

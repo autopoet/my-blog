@@ -2,7 +2,7 @@
 title: CampusHub：基于状态与路由的跨页面缓存隔离
 date: 2026-03-18
 categories:
-  - 聊聊项目
+  - 项目实践
 tags:
   - 面试
   - CampusHub

@@ -2,7 +2,7 @@
 title: 路由与状态管理
 date: 2025-12-09
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - Vue Router

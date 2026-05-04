@@ -2,7 +2,7 @@
 title: Git 基础教程
 date: 2025-11-04
 categories:
-  - 学学技术
+  - 计算机基础
 tags:
   - Git
   - 版本控制

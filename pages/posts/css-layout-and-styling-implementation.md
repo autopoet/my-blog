@@ -2,7 +2,7 @@
 title: CSS 核心布局与样式手写实现专题
 date: 2025-11-07
 categories:
-  - 写写代码
+  - 前端
 tags:
   - CSS
   - 手写实现

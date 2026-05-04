@@ -2,7 +2,7 @@
 title: Kotlin 语法迁移指南
 date: 2026-04-05
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Kotlin
   - Android

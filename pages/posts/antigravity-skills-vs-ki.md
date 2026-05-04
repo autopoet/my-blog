@@ -2,7 +2,7 @@
 title: Skill 指令集与 KI 知识库的协同演进
 date: 2026-04-14
 categories:
-  - 学学技术
+  - AI
 tags:
   - AI
   - 工程化

@@ -2,7 +2,7 @@
 title: Vue3 转 React 学习笔记（二）：描述 UI
 date: 2026-04-26
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue3
   - React

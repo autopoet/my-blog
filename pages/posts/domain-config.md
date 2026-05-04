@@ -2,7 +2,7 @@
 title: 自定义域名配置
 date: 2026-02-05
 categories:
-  - 学学技术
+  - 计算机基础
 tags:
   - 域名
   - DNS

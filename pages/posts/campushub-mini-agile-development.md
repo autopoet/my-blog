@@ -2,7 +2,7 @@
 title: we的学习搭子：云开发避坑与技术拆解
 date: 2026-04-07
 categories:
-  - 聊聊项目
+  - 项目实践
 tags:
   - 微信小程序
   - Vue3

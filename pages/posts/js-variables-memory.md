@@ -2,7 +2,7 @@
 title: JS 基础：变量特性、内存管理与数组方法
 date: 2025-10-23
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 基础

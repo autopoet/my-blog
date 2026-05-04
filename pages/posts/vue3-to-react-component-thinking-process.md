@@ -2,7 +2,7 @@
 title: Vue3 转 React 学习笔记（五）：如何从需求写出一个组件
 date: 2026-05-01
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue3
   - React

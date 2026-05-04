@@ -2,7 +2,7 @@
 title: Vue 安装与项目创建
 date: 2025-11-10
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Vue
   - 脚手架

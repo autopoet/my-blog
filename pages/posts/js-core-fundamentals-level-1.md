@@ -2,7 +2,7 @@
 title: JavaScript 核心必会知识体系
 date: 2025-12-20
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 核心

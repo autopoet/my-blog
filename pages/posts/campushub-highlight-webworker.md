@@ -2,7 +2,7 @@
 title: CampusHub：基于 Web Worker 的计算分流与性能优化
 date: 2026-03-14
 categories:
-  - 聊聊项目
+  - 项目实践
 tags:
   - CampusHub
   - 性能优化

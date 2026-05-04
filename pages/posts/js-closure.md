@@ -2,7 +2,7 @@
 title: JS 基础：闭包 (Closure)
 date: 2025-11-02
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 基础

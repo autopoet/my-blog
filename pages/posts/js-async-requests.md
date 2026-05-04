@@ -2,7 +2,7 @@
 title: Ajax, Fetch 与 Axios 核心对比
 date: 2025-11-18
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 网络请求

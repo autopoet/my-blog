@@ -2,7 +2,7 @@
 title: 闭包与函数柯里化
 date: 2026-03-28
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 闭包

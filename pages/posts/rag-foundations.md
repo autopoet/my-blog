@@ -2,7 +2,7 @@
 title: RAG 检索增强生成
 date: 2026-03-29
 categories:
-  - 学学技术
+  - AI
 tags:
   - AI
   - RAG

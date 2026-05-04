@@ -2,7 +2,7 @@
 title: CampusHub：基于 GPU 加速的轻量化布局实践
 date: 2026-03-12
 categories:
-  - 聊聊项目
+  - 项目实践
 tags:
   - 面试
   - CampusHub

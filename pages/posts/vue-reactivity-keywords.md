@@ -2,7 +2,7 @@
 title: Vue 响应式系统核心要点解析
 date: 2025-12-05
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 原理解析

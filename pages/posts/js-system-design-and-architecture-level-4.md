@@ -2,7 +2,7 @@
 title: JavaScript 知识拓宽与周边生态
 date: 2025-12-28
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 拓宽

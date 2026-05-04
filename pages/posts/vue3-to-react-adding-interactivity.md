@@ -2,7 +2,7 @@
 title: Vue3 转 React 学习笔记（三）：添加交互
 date: 2026-04-27
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue3
   - React

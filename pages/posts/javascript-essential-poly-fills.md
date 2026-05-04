@@ -2,7 +2,7 @@
 title: JavaScript 常用核心手写实现
 date: 2026-04-11
 categories:
-  - 写写代码
+  - 前端
 tags:
   - JavaScript
   - 手写实现

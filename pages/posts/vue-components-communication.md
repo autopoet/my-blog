@@ -2,7 +2,7 @@
 title: Vue 组件与通信
 date: 2025-12-12
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 组件通信

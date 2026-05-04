@@ -2,7 +2,7 @@
 title: Vue 中的 MVVM 架构模式
 date: 2025-11-13
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 架构设计

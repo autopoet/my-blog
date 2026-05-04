@@ -2,7 +2,7 @@
 title: JavaScript 深度扩展知识体系
 date: 2025-12-25
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 深度

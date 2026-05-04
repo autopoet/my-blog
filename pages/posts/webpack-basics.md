@@ -2,7 +2,7 @@
 title: Webpack 基础教程
 date: 2025-11-12
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Webpack
   - 构建工具

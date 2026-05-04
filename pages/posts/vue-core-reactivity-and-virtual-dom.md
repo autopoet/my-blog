@@ -2,7 +2,7 @@
 title: Vue 3 核心原理深度进阶
 date: 2025-12-15
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 核心

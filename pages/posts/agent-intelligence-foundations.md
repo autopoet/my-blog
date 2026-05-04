@@ -2,7 +2,7 @@
 title: Agent 智能体基础
 date: 2026-03-30
 categories:
-  - 学学技术
+  - AI
 tags:
   - AI
   - Agent

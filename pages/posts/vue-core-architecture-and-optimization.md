@@ -2,7 +2,7 @@
 title: Vue 高级架构与企业级深度实践
 date: 2025-12-31
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 核心

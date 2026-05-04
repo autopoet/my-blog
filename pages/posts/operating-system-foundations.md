@@ -2,7 +2,7 @@
 title: 操作系统的底层原理解析（Linux & OS）
 date: 2026-02-23
 categories:
-  - 啃啃原理
+  - 计算机基础
 tags:
   - 操作系统
   - Linux

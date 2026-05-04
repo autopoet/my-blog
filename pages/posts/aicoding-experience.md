@@ -2,7 +2,7 @@
 title: AI Coding 使用心得
 date: 2026-04-06
 categories:
-  - 碎碎念
+  - AI
 tags:
   - AI
   - Coding

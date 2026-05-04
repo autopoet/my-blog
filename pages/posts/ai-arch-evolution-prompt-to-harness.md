@@ -2,7 +2,7 @@
 title: 从 Prompt 到 Harness：一点关于 AI 开发的思考
 date: 2026-04-19
 categories:
-  - 啃啃原理
+  - AI
 tags:
   - AI
   - 工程

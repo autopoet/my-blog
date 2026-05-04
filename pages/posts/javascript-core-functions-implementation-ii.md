@@ -2,7 +2,7 @@
 title: 核心功能手写实现：原生 JS 强化（下）
 date: 2026-01-23
 categories:
-  - 写写代码
+  - 前端
 tags:
   - JavaScript
   - 函数式编程

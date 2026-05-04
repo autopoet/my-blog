@@ -2,7 +2,7 @@
 title: JS 进阶：继承实现方式理解原型链
 date: 2026-03-26
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - JavaScript
   - 原型链

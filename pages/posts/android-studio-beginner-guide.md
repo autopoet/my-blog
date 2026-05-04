@@ -2,7 +2,7 @@
 title: Android Studio 基础入门
 date: 2026-04-04
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Android
   - Android Studio

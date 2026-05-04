@@ -2,7 +2,7 @@
 title: my-blog：手写图片懒加载指令
 date: 2026-03-03
 categories:
-  - 聊聊项目
+  - 项目实践
 tags:
   - my-blog
   - 面试

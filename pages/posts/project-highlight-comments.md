@@ -2,7 +2,7 @@
 title: my-blog：全栈交互体验（下）- 前端视角下的评论系统
 date: 2026-03-08
 categories:
-  - 聊聊项目
+  - 项目实践
 tags:
   - my-blog
   - 技术沉淀

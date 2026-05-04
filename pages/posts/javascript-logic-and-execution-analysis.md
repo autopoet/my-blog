@@ -2,7 +2,7 @@
 title: JavaScript 代码执行逻辑静态分析
 date: 2026-01-10
 categories:
-  - 写写代码
+  - 前端
 tags:
   - JavaScript
   - 代码分析

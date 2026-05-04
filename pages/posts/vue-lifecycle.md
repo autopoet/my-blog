@@ -2,7 +2,7 @@
 title: Vue 生命周期钩子函数
 date: 2025-12-07
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 生命周期

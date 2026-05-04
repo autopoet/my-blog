@@ -2,7 +2,7 @@
 title: Vue 3 响应式系统原理（新）
 date: 2025-12-02
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 响应式原理

@@ -2,7 +2,7 @@
 title: Vercel 部署教程
 date: 2025-11-16
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Vercel
   - 部署

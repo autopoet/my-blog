@@ -2,7 +2,7 @@
 title: Vue 3 实战技巧与性能优化
 date: 2025-12-18
 categories:
-  - 啃啃原理
+  - 前端
 tags:
   - Vue
   - 核心

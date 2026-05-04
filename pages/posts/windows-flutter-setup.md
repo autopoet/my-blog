@@ -2,7 +2,7 @@
 title: Windows Flutter 安装指南
 date: 2026-04-02
 categories:
-  - 学学技术
+  - 前端
 tags:
   - Flutter
   - Windows

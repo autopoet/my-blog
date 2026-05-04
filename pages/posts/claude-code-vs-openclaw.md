@@ -2,7 +2,7 @@
 title: Claude Code 与 OpenClaw：基本了解 AI 编程工具的底层逻辑
 date: 2026-03-31
 categories:
-  - 学学技术
+  - AI
 tags:
   - AI Tools
   - Claude Code
