@@ -1,8 +1,8 @@
 ---
-title: 第一次前端实习 Git 生存手册
+title: Git 基础生存手册
 date: 2026-05-03
 categories:
-  - 计算机基础
+  - 碎碎念
 tags:
   - Git
   - 前端实习
