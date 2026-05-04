@@ -1,6 +1,6 @@
 ---
 title: JS 基础：闭包 (Closure)
-date: 2025-10-24
+date: 2025-08-04
 categories:
   - 前端
 tags:
