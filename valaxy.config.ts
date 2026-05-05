@@ -20,7 +20,7 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: 'Autopoet 技术笔记',
+      title: '想想的学习笔记',
       cloud: {
         enable: false,
       },

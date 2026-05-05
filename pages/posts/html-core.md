@@ -95,7 +95,7 @@ HTML 中有很多文本相关标签。
 
 ```html
 <header>
-  <h1>Autopoet 技术笔记</h1>
+  <h1>想想的学习笔记</h1>
   <nav>
     <a href="/">首页</a>
     <a href="/archives">归档</a>
@@ -110,7 +110,7 @@ HTML 中有很多文本相关标签。
 </main>
 
 <footer>
-  <p>© 2026 Autopoet</p>
+  <p>© 2026 想想的学习笔记</p>
 </footer>
 ```
 
