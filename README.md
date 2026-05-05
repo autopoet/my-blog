@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./public/logo.png" width="120" height="120" alt="想想的学习笔记 logo" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  <img src="./public/logo.png" width="120" height="120" alt="代码小本本 logo" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </p>
 
-<h1 align="center">想想的学习笔记</h1>
+<h1 align="center">代码小本本</h1>
 
 <p align="center">
   <strong>一个记录技术学习、工程实践与思考成长的个人博客</strong>

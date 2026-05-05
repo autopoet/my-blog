@@ -3,10 +3,10 @@ import { defineSiteConfig } from 'valaxy'
 export default defineSiteConfig({
   url: 'https://blog.autopoet.cn/',
   lang: 'zh-CN',
-  title: '想想的学习笔记',
+  title: '代码小本本',
   favicon: '/logo.png',
   author: {
-    name: '想想',
+    name: 'autopoet',
     avatar: '/me.jpg',
   },
   description: '一个记录技术学习、工程实践与思考成长的个人博客',

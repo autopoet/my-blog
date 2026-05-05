@@ -20,7 +20,7 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: '想想的学习笔记',
+      title: '代码小本本',
       cloud: {
         enable: false,
       },
